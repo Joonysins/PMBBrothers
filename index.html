@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Brothers Hospitality P.A.M. — Servicii Premium de Evenimente</title>
+    <meta name="description" content="Servicii premium de evenimente pentru nunți, gale corporate, petreceri private și sărbători speciale.">
+    <meta name="keywords" content="servicii evenimente, organizare nunți, gale corporate, petreceri private, ospitalitate, design eveniment">
+    
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600|Montserrat:200,300,400, 600, 700" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="assets/fonts/fontawesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/css/helpers.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/restaurant.css">
+    <style>
+      :root {
+        --site-bg: #F7F3EA;
+        --site-text: #2B2620;
+        --site-accent: #B8955C;
+        --site-accent-dark: #1F3B2C;
+        --site-text-secondary: #6B655C;
+        --site-surface: #FFFFFF;
+
+        --brand-white: #F7F3EA;
+        --brand-gold: #B8955C;
+        --brand-gold-soft: rgba(184, 149, 92, 0.16);
+        --brand-dark: #2B2620;
+        --brand-gray: #6B655C;
+
+        --bs-primary: #B8955C;
+        --bs-primary-rgb: 184,149,92;
+        --bs-secondary: #1F3B2C;
+        --bs-secondary-rgb: 31,59,44;
+        --bs-success: #1F3B2C;
+        --bs-success-rgb: 31,59,44;
+        --bs-info: #6B655C;
+        --bs-info-rgb: 107,101,92;
+        --bs-warning: #B8955C;
+        --bs-warning-rgb: 184,149,92;
+        --bs-danger: #B8955C;
+        --bs-danger-rgb: 184,149,92;
+        --bs-light: #F7F3EA;
+        --bs-light-rgb: 247,243,234;
+        --bs-dark: #2B2620;
+        --bs-dark-rgb: 43,38,32;
+        --bs-body-color: #2B2620;
+        --bs-body-bg: #F7F3EA;
+        --bs-link-color: #1F3B2C;
+        --bs-link-hover-color: #B8955C;
+      }
+      html, body {
+        background-color: var(--site-bg);
+        color: var(--site-text);
+      }
+      body, p, li, small, .pb_section .card-text, .pb_section .subheading, .testimonial_v1 .heading, .testimonial_v1 blockquote, .pb_section .pb_font-18, .pb_section .pb_font-16 {
+        color: var(--site-text-secondary) !important;
+      }
+      .pb_section, .pb_footer, .bg-light, .pb_bgcolor-light, .card, .pb_card_v1, .pb_card_v2, .pb_card_v3 {
+        background-color: var(--site-bg) !important;
+      }
+      .pb_section h1, .pb_section h2, .pb_section h3, .pb_section h4, .pb_section h5, .pb_section h6,
+      .pb_section .heading, .pb_section .card-title, .pb_section .quote,
+      .testimonial_v1 .heading, .testimonial_v1 blockquote,
+      .pb_footer, .pb_footer a, .pb_footer p, .pb_footer .list-unstyled li {
+        color: var(--site-text) !important;
+      }
+      a, .nav-link, .pb_section a, .pb_section .list-inline-item a, .pb_section .card a {
+        color: var(--site-accent-dark) !important;
+      }
+      a:hover, .nav-link:hover, .pb_section a:hover, .pb_section .list-inline-item a:hover, .pb_section .card a:hover {
+        color: var(--site-accent) !important;
+      }
+      .text-danger, .pb_color-danger, .pb_text-red,
+      .pb_text-blue, .pb_text-indigo, .pb_text-purple, .pb_text-pink, .pb_text-orange, .pb_text-yellow, .pb_text-green, .pb_text-teal, .pb_text-cyan,
+      .pb_color-primary, .pb_color-secondary, .pb_color-success, .pb_color-info, .pb_color-warning {
+        color: var(--site-accent) !important;
+      }
+      .pb_bgcolor-primary, .pb_bgcolor-secondary, .pb_bgcolor-success, .pb_bgcolor-info, .pb_bgcolor-warning,
+      .pb_bg-blue, .pb_bg-indigo, .pb_bg-purple, .pb_bg-pink, .pb_bg-red, .pb_bg-orange, .pb_bg-yellow, .pb_bg-green, .pb_bg-teal, .pb_bg-cyan {
+        background-color: var(--site-accent) !important;
+      }
+      .text-black, .pb_text-black, .pb_text-gray-900, .pb_text-gray-800, .pb_color-dark, .pb_color-dark-opacity-1, .pb_color-dark-opacity-2, .pb_color-dark-opacity-3, .pb_color-dark-opacity-4, .pb_color-dark-opacity-5, .pb_text-gray-700, .pb_text-gray-600 {
+        color: var(--site-text-secondary) !important;
+      }
+      .pb_text-gray-200 { color: #F2E9D5 !important; }
+      .pb_text-gray-300 { color: #E6DDD0 !important; }
+      .pb_text-gray-400 { color: #D9D0C3 !important; }
+      .pb_text-gray-500 { color: #BCB0A5 !important; }
+      .pb_footer {
+        background-color: var(--site-bg) !important;
+        color: var(--site-text-secondary) !important;
+      }
+      .pb_footer .list-unstyled li, .pb_footer p, .pb_footer a, .pb_footer .list-inline-item a {
+        color: var(--site-text-secondary) !important;
+      }
+      .pb_footer a:hover {
+        color: var(--site-accent) !important;
+      }
+      .btn, .pb_btn-pill, .btn-primary, .btn-warning, .pb_outline-light, .btn-outline-light,
+      .pb_tab_v1 .nav-item a, .pb_tab_v1 .nav-item a.active {
+        border-radius: 999px !important;
+      }
+      .btn-primary, .btn-warning, .btn-outline-primary, .btn-outline-warning, #reserve-btn, .pb_section .btn, .pb_section .pb_btn-pill {
+        background-color: var(--site-accent) !important;
+        border-color: var(--site-accent) !important;
+        color: var(--site-text) !important;
+      }
+      .btn-primary:hover, .btn-warning:hover, #reserve-btn:hover, .pb_section .btn:hover, .pb_section .pb_btn-pill:hover {
+        background-color: #A07D4C !important;
+        border-color: #A07D4C !important;
+        color: var(--site-text) !important;
+      }
+      .btn-outline-light, .pb_outline-light {
+        color: var(--site-text) !important;
+        border-color: var(--site-accent-dark) !important;
+      }
+      .btn-outline-light:hover, .pb_outline-light:hover, .pb_outline-light:focus, .pb_outline-light:active {
+        background-color: rgba(31, 59, 44, 0.08) !important;
+        color: var(--site-accent-dark) !important;
+      }
+      .pb_tab_v1 .nav-item a {
+        color: var(--site-text-secondary) !important;
+        border-color: rgba(31, 59, 44, 0.1) !important;
+      }
+      .pb_tab_v1 .nav-item a.active {
+        color: var(--site-accent) !important;
+        border-color: var(--site-accent) !important;
+      }
+      .pb_tab_v1 .nav-item a:hover,
+      .pb_tab_v1 .nav-item a:focus {
+        color: var(--site-accent) !important;
+      }
+      .cover-bg-black:before {
+        background: rgba(31, 59, 44, 0.65) !important;
+      }
+      .cover-bg-white:before {
+        background: rgba(247, 243, 234, 0.7) !important;
+      }
+      .pb_section.pb_bg-half:before {
+        background: rgba(184,149,92,0.14) !important;
+      }
+      .pb_section .card, .pb_section .pb_card_v1, .pb_section .pb_card_v2, .pb_section .pb_card_v3 {
+        border-color: rgba(31,59,44,0.12) !important;
+      }
+      .pb_card_v2 .icon i:before {
+        color: var(--site-accent) !important;
+      }
+      .testimonial_v1 blockquote {
+        color: var(--site-text-secondary) !important;
+      }
+      .testimonial_v1 .heading, .testimonial_v1 .subheading {
+        color: var(--site-text-secondary) !important;
+      }
+      .service-category-tabs .nav-link {
+        padding: 1rem 1.6rem;
+        border-radius: 50px;
+        margin: 0 0.25rem;
+        background: #ffffff;
+        color: #2B2620;
+        border: 1px solid #1F3B2C;
+        transition: background .25s ease, color .25s ease, border-color .25s ease;
+      }
+      .service-category-tabs .nav-link:hover {
+        background: #F7F3EA;
+        color: #2B2620;
+      }
+      .service-category-tabs .nav-link.active {
+        background: #B8955C;
+        color: #2B2620;
+        border-color: #B8955C;
+      }
+      .service-tabs-section {
+        position: relative;
+        background: #ffffff;
+        padding: 30px 24px 24px;
+        border-radius: 24px;
+        margin-bottom: 1.75rem;
+      }
+      .service-tab-arrows {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        pointer-events: none;
+        transform: translateY(-50%);
+      }
+      .service-tab-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: auto;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #B8955C;
+        color: #ffffff;
+        box-shadow: 0 10px 25px rgba(0,0,0,.12);
+        border: 1px solid rgba(0,0,0,.08);
+      }
+      .service-tab-prev { left: 16px; }
+      .service-tab-next { right: 16px; }
+      .service-tab-arrow i { font-size: 18px; }
+      .service-category-tabs { justify-content: center; }
+      .tab-content {
+        padding-top: 1.5rem;
+        min-height: 460px;
+      }
+      .tab-pane {
+        min-height: 430px;
+      }
+      .service-image-col {
+        min-height: 340px;
+      }
+      @media (max-width: 767px) {
+        .service-tab-arrow { width: 42px; height: 42px; left: 8px; right: 8px; }
+      }
+    </style>
+  <meta name="robots" content="noindex, nofollow">
+  <script>/*uic-maps-fallback*/window.google=window.google||{};if(!window.google.maps){var M=new Proxy(function(){},{get:function(t,p){return p==="event"?{addListener:function(){return M},addDomListener:function(){return M},trigger:function(){return M},clearListeners:function(){return M},removeListener:function(){return M}}:M},apply:function(){return M},construct:function(){return M}});window.google.maps=M;}</script>
+<script>/*uic-maps-fallback*/document.addEventListener("DOMContentLoaded",function(){var s="#map,#mapCanvas,#map-canvas,.map-canvas,.contact-map,.location-map,.modal-map,.map-section,.map-wrapper,.map-area";document.querySelectorAll(s).forEach(function(el){if(el.children.length||el.querySelector("iframe,img"))return;el.style.cssText+=";display:flex;align-items:center;justify-content:center;min-height:200px;background:#eef1f5;color:#5a6572;font:14px/1.5 sans-serif;text-align:center;padding:20px";el.innerHTML='<span>📍 <a href="https://www.google.com/maps" target="_blank" rel="noopener" style="color:#2563eb">View location on Google Maps</a></span>';});});</script>
+</head>
+  <body data-bs-spy="scroll" data-bs-target="#pb-navbar" data-bs-offset="200">
+    
+
+    <div class="probootstrap-loader"></div>
+    <!-- END loader -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark pb_navbar pb_scrolled-light" id="pb-navbar">
+      <div class="container">
+        <a class="navbar-brand d-xl-none d-lg-none d-md-block d-sm-block" href="/">
+          <img src="assets/images/restaurant/logo.png" alt="Brothers Hospitality P.A.M. Logo" class="light">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#probootstrap-navbar" aria-controls="probootstrap-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span><i class="ion-navicon"></i></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-md-center" id="probootstrap-navbar">
+          <ul class="navbar-nav nav-left d-flex align-items-center">
+            <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="#section-about">Despre</a></li>
+            <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="#section-menu">Servicii</a></li>
+          </ul>
+
+          <div class="logo-center d-none d-lg-flex align-items-center justify-content-center">
+            <a class="nav-link p-0" href="index.html">
+              <img src="assets/images/restaurant/logo.png" alt="Brothers Hospitality P.A.M. Logo" class="light">
+            </a>
+          </div>
+
+          <ul class="navbar-nav nav-right d-flex align-items-center">
+            <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="#section-gallery">Galerie</a></li>
+            <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="#section-events">Evenimente</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END nav -->
+
+    <section class="pb_cover_v1 cover-bg-black cover-bg-opacity-4 text-center" style="background-image: url(assets/images/restaurant/1900x1200/img_1.jpg)" id="section-home">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-9  order-md-1">
+            <h2 class="heading mb-3">Experiențe de eveniment create pentru a inspira</h2>
+            <div class="sub-heading"><p class="mb-5">Ospitalitate premium pentru nunți, gale corporate, petreceri private și sărbători deosebite. Gestionăm fiecare detaliu ca evenimentul tău să pară fără efort.</p></div>
+            <p><a id="reserve-btn" href="https://wa.me/40772146083" role="button" class="btn smoothscroll pb_outline-light rounded-0 btn-xl pb_font-13 pb_letter-spacing-2 p-3">Rezervă un eveniment</a></p>
+          </div>  
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+    
+    <section class="pb_section" id="section-about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mb-5">
+            <div class="row">
+              <div class="col">
+                <p><img src="assets/images/restaurant/800x975/img_4.jpg" alt="Event image" class="img-fluid"></p>
+              </div>
+              <div class="col">
+                <p><img src="assets/images/restaurant/800x975/img_5.jpg" alt="Event image" class="img-fluid"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 ps-lg-5 ps-lg-0">
+            <h2 class="mb-4 text-uppercase pb_letter-spacing-2">Ospitalitate pentru evenimente</h2>
+            <p>PAM Brothers oferă servicii premium de ospitalitate pentru nunți, gale corporate, petreceri private și evenimente speciale, susținute de peste 10 ani de experiență în domeniul evenimentelor.</p>
+
+            <p>Ne dedicăm fiecărui detaliu cu un nivel înalt de profesionalism, coordonare impecabilă și servicii atent personalizate pentru a asigura o experiență fluidă și rafinată.</p>
+            <p><a href="#section-menu" class="smoothscroll text-danger text-uppercase">Descoperă serviciile noastre <i class="ion-arrow-down-c"></i></a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+    <section class="pb_section" id="section-menu">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-10 text-center">
+              <h2 class="mb-4 text-uppercase pb_letter-spacing-2">Serviciile Noastre</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+
+              <div class="position-relative service-tabs-section">
+                <ul class="nav nav-pills justify-content-center service-category-tabs mb-4" role="tablist">
+                  <li class="nav-item ms-3">
+                    <a class="nav-link active p-3" data-bs-toggle="tab" href="#hospitality" role="tab">Ospitalitate</a>
+                  </li>
+                  <li class="nav-item ms-3">
+                    <a class="nav-link p-3" data-bs-toggle="tab" href="#entertainment" role="tab">Divertisment</a>
+                  </li>
+                  <li class="nav-item ms-3">
+                    <a class="nav-link p-3" data-bs-toggle="tab" href="#design" role="tab">Design</a>
+                  </li>
+                </ul>
+
+                <div class="service-tab-arrows">
+                  <button class="btn service-tab-arrow service-tab-prev" type="button" aria-label="Anterior"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                  <button class="btn service-tab-arrow service-tab-next" type="button" aria-label="Următor"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                </div>
+              </div>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="hospitality" role="tabpanel">
+                <div class="row align-items-center gy-4">
+                  <div class="col-lg-6 service-image-col">
+                    <img src="assets/images/restaurant/800x975/img_2.jpg" alt="Ospatar profesional" class="img-fluid rounded shadow-sm h-100" style="object-fit:cover; width:100%;">
+                  </div>
+                  <div class="col-lg-6">
+                    <h3 class="pb_font-18 fw-bold mb-4">Ospitalitate dedicată fiecărui eveniment</h3>
+                    <ul class="list-unstyled">
+                      <li class="mb-4">
+                        <h4 class="pb_font-16 fw-bold">Coordonare eveniment</h4>
+                        <p class="mb-0">Planificare completă și coordonare la fața locului, pentru desfășurarea impecabilă a fiecărui moment.</p>
+                      </li>
+                      <li class="mb-4">
+                        <h4 class="pb_font-16 fw-bold">Personal Horeca</h4>
+                        <p class="mb-0">Gazde profesioniste, ospătari și echipe de bar pregătite pentru orice număr de invitați.</p>
+                      </li>
+                      <li class="mb-4">
+                        <h4 class="pb_font-16 fw-bold">Sosire invitați</h4>
+                        <p class="mb-0">Întâmpinare, garderobă și asistență concierge pentru invitați VIP.</p>
+                      </li>
+                      <li>
+                        <h4 class="pb_font-16 fw-bold">Suport post-eveniment</h4>
+                        <p class="mb-0">Finalizare atentă și predarea locației pentru o încheiere fără griji.</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="entertainment" role="tabpanel">
+                <div class="row align-items-center gy-4">
+                  <div class="col-lg-6 order-lg-2 service-image-col">
+                    <img src="assets/images/restaurant/800x975/img_1.jpg" alt="Concert sau divertisment live" class="img-fluid rounded shadow-sm h-100" style="object-fit:cover; width:100%;">
+                  </div>
+                  <div class="col-lg-6 order-lg-1">
+                    <h3 class="pb_font-18 fw-bold mb-4">Divertisment care impresionează</h3>
+                    <ul class="list-unstyled">
+                      <li class="mb-4">
+                        <h4 class="pb_font-16 fw-bold">DJ și sunet</h4>
+                        <p class="mb-0">Playlisturi personalizate și sisteme audio premium pentru o atmosferă perfectă.</p>
+                      </li>
+                      <li class="mb-4">
+                        <h4 class="pb_font-16 fw-bold">Entertainment live</h4>
+                        <p class="mb-0">Muzicieni, artiști și MC-uri care se sincronizează cu stilul evenimentului tău.</p>
+                      </li>
+                      <li class="mb-4">
+                        <h4 class="pb_font-16 fw-bold">Personal divertisment</h4>
+                        <p class="mb-0">Gazde și asistenți dedicați pentru gestionarea impecabilă a momentelor live.</p>
+                      </li>
+                      <li>
+                        <h4 class="pb_font-16 fw-bold">Iluminat scenă</h4>
+                        <p class="mb-0">Iluminat dinamic pentru ceremonii, discursuri și momente de impact.</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="design" role="tabpanel">
+                <div class="row align-items-center gy-4">
+                  <div class="col-lg-6 service-image-col">
+                    <img src="assets/images/restaurant/800x975/img_3.jpg" alt="Design de eveniment" class="img-fluid rounded shadow-sm h-100" style="object-fit:cover; width:100%;">
+                  </div>
+                  <div class="col-lg-6">
+                    <h3 class="pb_font-18 fw-bold mb-4">Design memorabil și coerent</h3>
+                    <ul class="list-unstyled">
+                      <li class="mb-4">
+                        <h4 class="pb_font-16 fw-bold">Aranjamente florale</h4>
+                        <p class="mb-0">Compoziții florale personalizate și centre de masă elegante.</p>
+                      </li>
+                      <li class="mb-4">
+                        <h4 class="pb_font-16 fw-bold">Pachete decor</h4>
+                        <p class="mb-0">Decor de lux, textile și stilizare tematică pentru o atmosferă rafinată.</p>
+                      </li>
+                      <li class="mb-4">
+                        <h4 class="pb_font-16 fw-bold">Design de papetărie</h4>
+                        <p class="mb-0">Invitații, meniuri și semnalistică personalizate în ton cu evenimentul.</p>
+                      </li>
+                      <li>
+                        <h4 class="pb_font-16 fw-bold">Semnalistică eveniment</h4>
+                        <p class="mb-0">Semnalistică direcțională și detalii branduite pentru o experiență coerentă.</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+    <section class="pb_md_py_cover text-center cover-bg-black cover-bg-opacity-4" style="background-image: url(assets/images/restaurant/1900x1200/img_1.jpg)" id="section-highlights">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-9  order-md-1">
+            <h2 class="heading mb-3">Evenimente personalizate, experiențe rafinate</h2>
+            <p class="sub-heading">O fuziune armonioasă de ospitalitate, design și divertisment pentru nunți, gale corporate și petreceri private.</p>
+          </div>  
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+    <section class="pb_section" id="section-gallery">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-10 text-center">
+            <h2 class="mb-4 text-uppercase pb_letter-spacing-2">Galerie</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="card-columns">
+              <div class="card border-0 mb-4">
+                <a href="assets/images/restaurant/800x975/img_4.jpg" class="pb_hover-zoom image-popup">
+                  <img class="img-fluid" src="assets/images/restaurant/800x975/img_4.jpg" alt="Image caption here">
+                  <i class="ion-ios-search-strong icon"></i>
+                </a>
+              </div>
+              <div class="card border-0 mb-4">
+                <a href="assets/images/restaurant/800x975/img_5.jpg" class="pb_hover-zoom image-popup">
+                  <img class="img-fluid" src="assets/images/restaurant/800x975/img_5.jpg" alt="Image caption here">
+                  <i class="ion-ios-search-strong icon"></i>
+                </a>
+              </div>
+              <div class="card border-0 mb-4">
+                <a href="assets/images/restaurant/800x975/img_6.jpg" class="pb_hover-zoom image-popup">
+                  <img class="img-fluid" src="assets/images/restaurant/800x975/img_6.jpg" alt="Image caption here">
+                  <i class="ion-ios-search-strong icon"></i>
+                </a>
+              </div>
+              <div class="card border-0 mb-4">
+                <a href="assets/images/restaurant/800x975/img_7.jpg" class="pb_hover-zoom image-popup">
+                  <img class="img-fluid" src="assets/images/restaurant/800x975/img_7.jpg" alt="Image caption here">
+                  <i class="ion-ios-search-strong icon"></i>
+                </a>
+              </div>
+              <div class="card border-0 mb-4">
+                <a href="assets/images/restaurant/800x975/img_8.jpg" class="pb_hover-zoom image-popup">
+                  <img class="img-fluid" src="assets/images/restaurant/800x975/img_8.jpg" alt="Image caption here">
+                  <i class="ion-ios-search-strong icon"></i>
+                </a>
+              </div>
+              <div class="card border-0 mb-4">
+                <a href="assets/images/restaurant/800x975/img_9.jpg" class="pb_hover-zoom image-popup">
+                  <img class="img-fluid" src="assets/images/restaurant/800x975/img_9.jpg" alt="Image caption here">
+                  <i class="ion-ios-search-strong icon"></i>
+                </a>
+              </div>
+              <div class="card border-0 mb-4">
+                <a href="assets/images/restaurant/800x975/img_10.jpg" class="pb_hover-zoom image-popup">
+                  <img class="img-fluid" src="assets/images/restaurant/800x975/img_10.jpg" alt="Image caption here">
+                  <i class="ion-ios-search-strong icon"></i>
+                </a>
+              </div>
+              
+              <div class="card border-0 mb-4">
+                <a href="assets/images/restaurant/800x975/img_11.jpg" class="pb_hover-zoom image-popup">
+                  <img class="img-fluid" src="assets/images/restaurant/800x975/img_11.jpg" alt="Image caption here">
+                  <i class="ion-ios-search-strong icon"></i>
+                </a>
+              </div>
+              <div class="card border-0 mb-4">
+                <a href="assets/images/restaurant/800x975/img_12.jpg" class="pb_hover-zoom image-popup">
+                  <img class="img-fluid" src="assets/images/restaurant/800x975/img_12.jpg" alt="Image caption here">
+                  <i class="ion-ios-search-strong icon"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+    <section class="pb_section cover-bg-cyan cover-bg-opacity-3">
+      <div class="container">
+         <div class="row justify-content-center mb-5">
+          <div class="col-md-10 text-center">
+            <h2 class="mb-4 text-uppercase pb_letter-spacing-2">Poveștile clienților</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md">
+            <div class="media d-block text-center testimonial_v1 pb_quote_v1">
+              <div class="media-body">
+                <div class="quote pb_text-black">&ldquo;</div>
+                <blockquote class="mb-5 pb_font-20">„Echipa a făcut ca nunta noastră să pară fără efort. Fiecare detaliu a fost perfect, iar invitații noștri au fost impresionați de servicii și atmosferă.”</blockquote>
+                <img class="d-flex text-center mx-auto mb-3 rounded-circle" src="assets/images/persons/person_1.jpg" alt="Event client photo">
+                <h3 class="heading">Andreea & Vlad</h3>
+                <p class="subheading">Wedding celebration</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="media d-block text-center testimonial_v1 pb_quote_v1">
+              <div class="media-body">
+                <div class="quote pb_text-black">&ldquo;</div>
+                <blockquote class="mb-5 pb_font-20">„Gala noastră corporate a fost executată impecabil. Ospitalitatea, sincronizarea și profesionalismul au fost remarcabile de la început până la sfârșit.”</blockquote>
+                <img class="d-flex text-center mx-auto mb-3 rounded-circle" src="assets/images/persons/person_5.jpg" alt="Event client photo">
+                <h3 class="heading">Alexandru T.</h3>
+                <p class="subheading">Corporate event</p>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="media d-block text-center testimonial_v1 pb_quote_v1">
+              
+              <div class="media-body">
+                <div class="quote pb_text-black">&ldquo;</div>
+                <blockquote class="mb-5 pb_font-20">„Petrecerea noastră privată a fost luxoasă și fără efort. Designul, muzica și serviciile au făcut seara de neuitat.”</blockquote>
+                <img class="d-flex text-center mx-auto mb-3 rounded-circle" src="assets/images/persons/person_2.jpg" alt="Event client photo">
+                <h3 class="heading">Ioana M.</h3>
+                <p class="subheading">Private party</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+    <section class="pb_md_py_cover text-center cover-bg-black cover-bg-opacity-4" style="background-image: url(assets/images/restaurant/1900x1200/img_1.jpg)" id="section-values">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-9  order-md-1">
+            <h2 class="heading mb-3">Fiecare moment executat perfect</h2>
+            <p class="sub-heading">De la sosirea invitaților până la toastul final, echipa noastră construiește fiecare detaliu pentru ca evenimentul tău să fie impecabil și memorabil.</p>
+          </div>  
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+    <section class="pb_section bg-light" id="section-events">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-10 text-center">
+            <h2 class="mb-4 text-uppercase pb_letter-spacing-2">Evenimente</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card-deck">
+            <div class="card border-0">
+              <img class="card-img-top" src="assets/images/restaurant/800x975/img_6.jpg" alt="Evenimente nunti botez cununie corporate">
+              <div class="card-body pb_p-40">
+                <small class="text-uppercase pb_color-dark-opacity-3 fw-bold">Nunti</small>
+                <h4 class="card-title text-danger">Organizare nunți elegante și fără griji</h4>
+                <p class="card-text">Creăm nunți memorabile cu coordonare completă, servicii rafinate și atenție la fiecare detaliu.</p>
+              </div>
+            </div>
+            <div class="card border-0">
+              <img class="card-img-top" src="assets/images/restaurant/800x975/img_7.jpg" alt="Evenimente corporate">
+              <div class="card-body pb_p-40">
+                <small class="text-uppercase pb_color-dark-opacity-3 fw-bold">Corporate</small>
+                <h4 class="card-title text-danger">Gale corporate și evenimente de business</h4>
+                <p class="card-text">De la conferințe la dineuri de premiere, oferim ospitalitate premium și execuție fără cusur.</p>
+              </div>
+            </div>
+            <div class="card border-0">
+              <img class="card-img-top" src="assets/images/restaurant/800x975/img_8.jpg" alt="Evenimente botez cununie">
+              <div class="card-body pb_p-40">
+                <small class="text-uppercase pb_color-dark-opacity-3 fw-bold">Botezuri și cununii</small>
+                <h4 class="card-title text-danger">Ceremonii religioase și petreceri de familie</h4>
+                <p class="card-text">Botezuri și cununii planificate cu grijă, eleganță și servicii personalizate pentru fiecare familie.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+    <!-- Contact section removed per request; reserve button will link to WhatsApp later -->
+
+    <footer class="pb_footer bg-light" role="contentinfo">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col">
+            <ul class="list-inline">
+              <li class="list-inline-item"><a href="#" class="p-2"><i class="fa fa-facebook"></i></a></li>
+              <li class="list-inline-item"><a href="#" class="p-2"><i class="fa fa-twitter"></i></a></li>
+              <li class="list-inline-item"><a href="#" class="p-2"><i class="fa fa-instagram"></i></a></li>
+              <li class="list-inline-item"><a href="#" class="p-2"><i class="fa fa-tripadvisor"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <p>&copy; 2026 Brothers Hospitality P.A.M. — Servicii premium de evenimente. Toate drepturile rezervate.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- loader -->
+    <div id="pb_loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#FDA04F"/></svg></div>
+    
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var tabs = Array.from(document.querySelectorAll('.service-category-tabs .nav-link'));
+        var activeIndex = tabs.findIndex(function(tab){ return tab.classList.contains('active'); });
+        if (activeIndex < 0) activeIndex = 0;
+        function showTab(index) {
+          if (!tabs[index]) return;
+          var tab = new bootstrap.Tab(tabs[index]);
+          tab.show();
+        }
+        function setActiveIndex(index) {
+          activeIndex = (index + tabs.length) % tabs.length;
+        }
+        function nextTab() {
+          setActiveIndex(activeIndex + 1);
+          showTab(activeIndex);
+        }
+        function prevTab() {
+          setActiveIndex(activeIndex - 1);
+          showTab(activeIndex);
+        }
+        tabs.forEach(function(tab, index) {
+          tab.addEventListener('shown.bs.tab', function() { activeIndex = index; });
+        });
+        var rotateInterval = setInterval(nextTab, 5000);
+        function resetInterval() {
+          clearInterval(rotateInterval);
+          rotateInterval = setInterval(nextTab, 5000);
+        }
+        document.querySelector('.service-tab-next').addEventListener('click', function() {
+          nextTab();
+          resetInterval();
+        });
+        document.querySelector('.service-tab-prev').addEventListener('click', function() {
+          prevTab();
+          resetInterval();
+        });
+      });
+    </script>
+
+  </body>
+</html>
