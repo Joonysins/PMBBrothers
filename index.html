@@ -7,7 +7,26 @@
     <title>Brothers Hospitality P.A.M. — Servicii Premium de Evenimente</title>
     <meta name="description" content="Servicii premium de evenimente pentru nunți, gale corporate, petreceri private și sărbători speciale.">
     <meta name="keywords" content="servicii evenimente, organizare nunți, gale corporate, petreceri private, ospitalitate, design eveniment">
-    
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Meta Tags -->
+    <meta property="og:title" content="Brothers Hospitality P.A.M. — Servicii Premium de Evenimente">
+    <meta property="og:description" content="Servicii premium de evenimente pentru nunți, gale corporate, petreceri private și sărbători speciale.">
+    <meta property="og:image" content="https://pambrothers.com/assets/images/restaurant/1900x1200/img_1.jpg">
+    <meta property="og:image:alt" content="Brothers Hospitality event photo">
+    <meta property="og:image:width" content="1440">
+    <meta property="og:image:height" content="1080">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pambrothers.com/">
+    <meta property="og:site_name" content="Brothers Hospitality P.A.M.">
+    <meta property="og:locale" content="ro_RO">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Brothers Hospitality P.A.M. — Servicii Premium de Evenimente">
+    <meta name="twitter:description" content="Servicii premium de evenimente pentru nunți, gale corporate, petreceri private și sărbători speciale.">
+    <meta name="twitter:image" content="https://pambrothers.com/assets/images/restaurant/1900x1200/img_1.jpg">
+
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600|Montserrat:200,300,400, 600, 700" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css">
@@ -24,7 +43,7 @@
         --site-text: #2B2620;
         --site-accent: #B8955C;
         --site-accent-dark: #1F3B2C;
-        --site-text-secondary: #6B655C;
+        --site-text-secondary: #F2F2F2;
         --site-surface: #FFFFFF;
 
         --brand-white: #F7F3EA;
@@ -58,7 +77,7 @@
         background-color: var(--site-bg);
         color: var(--site-text);
       }
-      body, p, li, small, .pb_section .card-text, .pb_section .subheading, .testimonial_v1 .heading, .testimonial_v1 blockquote, .pb_section .pb_font-18, .pb_section .pb_font-16 {
+      body, li, small, .pb_section .card-text, .pb_section .subheading, .testimonial_v1 .heading, .testimonial_v1 blockquote, .pb_section .pb_font-18, .pb_section .pb_font-16 {
         color: var(--site-text-secondary) !important;
       }
       .pb_section, .pb_footer, .bg-light, .pb_bgcolor-light, .card, .pb_card_v1, .pb_card_v2, .pb_card_v3 {
@@ -96,8 +115,11 @@
         background-color: var(--site-bg) !important;
         color: var(--site-text-secondary) !important;
       }
-      .pb_footer .list-unstyled li, .pb_footer p, .pb_footer a, .pb_footer .list-inline-item a {
+      .pb_footer .list-unstyled li, .pb_footer a, .pb_footer .list-inline-item a {
         color: var(--site-text-secondary) !important;
+      }
+      .pb_footer p {
+        color: #000000 !important;
       }
       .pb_footer a:hover {
         color: var(--site-accent) !important;
@@ -151,10 +173,11 @@
       .pb_card_v2 .icon i:before {
         color: var(--site-accent) !important;
       }
-      .testimonial_v1 blockquote {
-        color: var(--site-text-secondary) !important;
+      .testimonial_v1 blockquote,
+      .testimonial_v1 .heading {
+        color: #000000 !important;
       }
-      .testimonial_v1 .heading, .testimonial_v1 .subheading {
+      .testimonial_v1 .subheading {
         color: var(--site-text-secondary) !important;
       }
       .service-category-tabs .nav-link {
@@ -224,40 +247,40 @@
         .service-tab-arrow { width: 42px; height: 42px; left: 8px; right: 8px; }
       }
     </style>
-  <meta name="robots" content="noindex, nofollow">
-  <script>/*uic-maps-fallback*/window.google=window.google||{};if(!window.google.maps){var M=new Proxy(function(){},{get:function(t,p){return p==="event"?{addListener:function(){return M},addDomListener:function(){return M},trigger:function(){return M},clearListeners:function(){return M},removeListener:function(){return M}}:M},apply:function(){return M},construct:function(){return M}});window.google.maps=M;}</script>
-<script>/*uic-maps-fallback*/document.addEventListener("DOMContentLoaded",function(){var s="#map,#mapCanvas,#map-canvas,.map-canvas,.contact-map,.location-map,.modal-map,.map-section,.map-wrapper,.map-area";document.querySelectorAll(s).forEach(function(el){if(el.children.length||el.querySelector("iframe,img"))return;el.style.cssText+=";display:flex;align-items:center;justify-content:center;min-height:200px;background:#eef1f5;color:#5a6572;font:14px/1.5 sans-serif;text-align:center;padding:20px";el.innerHTML='<span>📍 <a href="https://www.google.com/maps" target="_blank" rel="noopener" style="color:#2563eb">View location on Google Maps</a></span>';});});</script>
-</head>
+  </head>
   <body data-bs-spy="scroll" data-bs-target="#pb-navbar" data-bs-offset="200">
     
-
-    <div class="probootstrap-loader"></div>
-    <!-- END loader -->
 
     <nav class="navbar navbar-expand-lg navbar-dark pb_navbar pb_scrolled-light" id="pb-navbar">
       <div class="container">
         <a class="navbar-brand d-xl-none d-lg-none d-md-block d-sm-block" href="/">
           <img src="assets/images/restaurant/logo.png" alt="Brothers Hospitality P.A.M. Logo" class="light">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#probootstrap-navbar" aria-controls="probootstrap-navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#site-navbar" aria-controls="site-navbar" aria-expanded="false" aria-label="Toggle navigation">
           <span><i class="ion-navicon"></i></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-md-center" id="probootstrap-navbar">
-          <ul class="navbar-nav nav-left d-flex align-items-center">
-            <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="#section-about">Despre</a></li>
-            <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="#section-menu">Servicii</a></li>
-          </ul>
-
-          <div class="logo-center d-none d-lg-flex align-items-center justify-content-center">
-            <a class="nav-link p-0" href="index.html">
+        <div class="collapse navbar-collapse justify-content-md-center" id="site-navbar">
+          <div class="logo-left d-none d-lg-flex align-items-center me-4">
+            <a class="nav-link p-0" href="index.html" aria-label="Brothers Hospitality Home">
               <img src="assets/images/restaurant/logo.png" alt="Brothers Hospitality P.A.M. Logo" class="light">
             </a>
           </div>
 
-          <ul class="navbar-nav nav-right d-flex align-items-center">
+          <ul class="navbar-nav mx-auto d-flex align-items-center">
+            <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="#section-about">Despre</a></li>
+            <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="#section-menu">Servicii</a></li>
             <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="#section-gallery">Galerie</a></li>
             <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="#section-events">Evenimente</a></li>
+            <li class="nav-item"><a class="nav-link p-2" href="https://www.instagram.com/brothersp.a.m/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
           </ul>
+          <div class="d-flex align-items-center ms-3 ms-auto navbar-text flex-column flex-md-row">
+            <a href="tel:+40772146083" class="btn btn-primary pb_outline-light rounded-0 btn-xl pb_font-13 pb_letter-spacing-2 p-3 me-md-2 mb-2 mb-md-0" aria-label="Telefon">
+              <i class="fa fa-phone me-2" aria-hidden="true"></i>telefon
+            </a>
+            <a href="mailto:brotheshospitality8@gmail.com" class="btn btn-primary pb_outline-light rounded-0 btn-xl pb_font-13 pb_letter-spacing-2 p-3" aria-label="Mail">
+              <i class="fa fa-envelope-o me-2" aria-hidden="true"></i>mail
+            </a>
+          </div>
         </div>
       </div>
     </nav>
@@ -269,7 +292,7 @@
           <div class="col-md-9  order-md-1">
             <h2 class="heading mb-3">Experiențe de eveniment create pentru a inspira</h2>
             <div class="sub-heading"><p class="mb-5">Ospitalitate premium pentru nunți, gale corporate, petreceri private și sărbători deosebite. Gestionăm fiecare detaliu ca evenimentul tău să pară fără efort.</p></div>
-            <p><a id="reserve-btn" href="https://wa.me/40772146083" role="button" class="btn smoothscroll pb_outline-light rounded-0 btn-xl pb_font-13 pb_letter-spacing-2 p-3">Rezervă un eveniment</a></p>
+            <p><a id="reserve-btn" href="https://wa.me/40772146083" role="button" class="btn pb_outline-light rounded-0 btn-xl pb_font-13 pb_letter-spacing-2 p-3">Contactează-ne</a></p>
           </div>  
         </div>
       </div>
@@ -294,7 +317,7 @@
             <p>PAM Brothers oferă servicii premium de ospitalitate pentru nunți, gale corporate, petreceri private și evenimente speciale, susținute de peste 10 ani de experiență în domeniul evenimentelor.</p>
 
             <p>Ne dedicăm fiecărui detaliu cu un nivel înalt de profesionalism, coordonare impecabilă și servicii atent personalizate pentru a asigura o experiență fluidă și rafinată.</p>
-            <p><a href="#section-menu" class="smoothscroll text-danger text-uppercase">Descoperă serviciile noastre <i class="ion-arrow-down-c"></i></a></p>
+            <p><a href="#section-menu" class="text-danger text-uppercase no-smooth">Descoperă serviciile noastre <i class="ion-arrow-down-c"></i></a></p>
           </div>
         </div>
       </div>
@@ -338,22 +361,22 @@
                     <img src="assets/images/restaurant/800x975/img_2.jpg" alt="Ospatar profesional" class="img-fluid rounded shadow-sm h-100" style="object-fit:cover; width:100%;">
                   </div>
                   <div class="col-lg-6">
-                    <h3 class="pb_font-18 fw-bold mb-4">Ospitalitate dedicată fiecărui eveniment</h3>
+                    <h3 style="color:var(--site-text) !important;" class="pb_font-18 fw-bold mb-4">Ospitalitate dedicată fiecărui eveniment</h3>
                     <ul class="list-unstyled">
                       <li class="mb-4">
-                        <h4 class="pb_font-16 fw-bold">Coordonare eveniment</h4>
+                        <h4 style="color:var(--site-text) !important;" class="pb_font-16 fw-bold">Coordonare eveniment</h4>
                         <p class="mb-0">Planificare completă și coordonare la fața locului, pentru desfășurarea impecabilă a fiecărui moment.</p>
                       </li>
                       <li class="mb-4">
-                        <h4 class="pb_font-16 fw-bold">Personal Horeca</h4>
+                        <h4 style="color:var(--site-text) !important;" class="pb_font-16 fw-bold">Personal Horeca</h4>
                         <p class="mb-0">Gazde profesioniste, ospătari și echipe de bar pregătite pentru orice număr de invitați.</p>
                       </li>
                       <li class="mb-4">
-                        <h4 class="pb_font-16 fw-bold">Sosire invitați</h4>
+                        <h4 style="color:var(--site-text) !important;" class="pb_font-16 fw-bold">Sosire invitați</h4>
                         <p class="mb-0">Întâmpinare, garderobă și asistență concierge pentru invitați VIP.</p>
                       </li>
                       <li>
-                        <h4 class="pb_font-16 fw-bold">Suport post-eveniment</h4>
+                        <h4 style="color:var(--site-text) !important;" class="pb_font-16 fw-bold">Suport post-eveniment</h4>
                         <p class="mb-0">Finalizare atentă și predarea locației pentru o încheiere fără griji.</p>
                       </li>
                     </ul>
@@ -366,22 +389,22 @@
                     <img src="assets/images/restaurant/800x975/img_1.jpg" alt="Concert sau divertisment live" class="img-fluid rounded shadow-sm h-100" style="object-fit:cover; width:100%;">
                   </div>
                   <div class="col-lg-6 order-lg-1">
-                    <h3 class="pb_font-18 fw-bold mb-4">Divertisment care impresionează</h3>
+                    <h3 style="color:var(--site-text) !important;" class="pb_font-18 fw-bold mb-4">Divertisment care impresionează</h3>
                     <ul class="list-unstyled">
                       <li class="mb-4">
-                        <h4 class="pb_font-16 fw-bold">DJ și sunet</h4>
+                        <h4 style="color:var(--site-text) !important;" class="pb_font-16 fw-bold">DJ și sunet</h4>
                         <p class="mb-0">Playlisturi personalizate și sisteme audio premium pentru o atmosferă perfectă.</p>
                       </li>
                       <li class="mb-4">
-                        <h4 class="pb_font-16 fw-bold">Entertainment live</h4>
+                        <h4 style="color:var(--site-text) !important;" class="pb_font-16 fw-bold">Entertainment live</h4>
                         <p class="mb-0">Muzicieni, artiști și MC-uri care se sincronizează cu stilul evenimentului tău.</p>
                       </li>
                       <li class="mb-4">
-                        <h4 class="pb_font-16 fw-bold">Personal divertisment</h4>
+                        <h4 style="color:var(--site-text) !important;" class="pb_font-16 fw-bold">Personal divertisment</h4>
                         <p class="mb-0">Gazde și asistenți dedicați pentru gestionarea impecabilă a momentelor live.</p>
                       </li>
                       <li>
-                        <h4 class="pb_font-16 fw-bold">Iluminat scenă</h4>
+                        <h4 style="color:var(--site-text) !important;" class="pb_font-16 fw-bold">Iluminat scenă</h4>
                         <p class="mb-0">Iluminat dinamic pentru ceremonii, discursuri și momente de impact.</p>
                       </li>
                     </ul>
@@ -394,22 +417,22 @@
                     <img src="assets/images/restaurant/800x975/img_3.jpg" alt="Design de eveniment" class="img-fluid rounded shadow-sm h-100" style="object-fit:cover; width:100%;">
                   </div>
                   <div class="col-lg-6">
-                    <h3 class="pb_font-18 fw-bold mb-4">Design memorabil și coerent</h3>
+                    <h3 style="color:var(--site-text) !important;" class="pb_font-18 fw-bold mb-4">Design memorabil și coerent</h3>
                     <ul class="list-unstyled">
                       <li class="mb-4">
-                        <h4 class="pb_font-16 fw-bold">Aranjamente florale</h4>
+                        <h4 style="color:var(--site-text) !important;" class="pb_font-16 fw-bold">Aranjamente florale</h4>
                         <p class="mb-0">Compoziții florale personalizate și centre de masă elegante.</p>
                       </li>
                       <li class="mb-4">
-                        <h4 class="pb_font-16 fw-bold">Pachete decor</h4>
+                        <h4 style="color:var(--site-text) !important;" class="pb_font-16 fw-bold">Pachete decor</h4>
                         <p class="mb-0">Decor de lux, textile și stilizare tematică pentru o atmosferă rafinată.</p>
                       </li>
                       <li class="mb-4">
-                        <h4 class="pb_font-16 fw-bold">Design de papetărie</h4>
+                        <h4 style="color:var(--site-text) !important;" class="pb_font-16 fw-bold">Design de papetărie</h4>
                         <p class="mb-0">Invitații, meniuri și semnalistică personalizate în ton cu evenimentul.</p>
                       </li>
                       <li>
-                        <h4 class="pb_font-16 fw-bold">Semnalistică eveniment</h4>
+                        <h4 style="color:var(--site-text) !important;" class="pb_font-16 fw-bold">Semnalistică eveniment</h4>
                         <p class="mb-0">Semnalistică direcțională și detalii branduite pentru o experiență coerentă.</p>
                       </li>
                     </ul>
@@ -531,7 +554,7 @@
                 <div class="quote pb_text-black">&ldquo;</div>
                 <blockquote class="mb-5 pb_font-20">„Gala noastră corporate a fost executată impecabil. Ospitalitatea, sincronizarea și profesionalismul au fost remarcabile de la început până la sfârșit.”</blockquote>
                 <img class="d-flex text-center mx-auto mb-3 rounded-circle" src="assets/images/persons/person_5.jpg" alt="Event client photo">
-                <h3 class="heading">Alexandru T.</h3>
+                <h3 class="heading">Ioana M.</h3>
                 <p class="subheading">Corporate event</p>
                 
               </div>
@@ -544,7 +567,7 @@
                 <div class="quote pb_text-black">&ldquo;</div>
                 <blockquote class="mb-5 pb_font-20">„Petrecerea noastră privată a fost luxoasă și fără efort. Designul, muzica și serviciile au făcut seara de neuitat.”</blockquote>
                 <img class="d-flex text-center mx-auto mb-3 rounded-circle" src="assets/images/persons/person_2.jpg" alt="Event client photo">
-                <h3 class="heading">Ioana M.</h3>
+                <h3 class="heading">Alexandru T.</h3>
                 <p class="subheading">Private party</p>
                 
               </div>
@@ -604,20 +627,8 @@
     </section>
     <!-- END section -->
 
-    <!-- Contact section removed per request; reserve button will link to WhatsApp later -->
-
     <footer class="pb_footer bg-light" role="contentinfo">
       <div class="container">
-        <div class="row text-center">
-          <div class="col">
-            <ul class="list-inline">
-              <li class="list-inline-item"><a href="#" class="p-2"><i class="fa fa-facebook"></i></a></li>
-              <li class="list-inline-item"><a href="#" class="p-2"><i class="fa fa-twitter"></i></a></li>
-              <li class="list-inline-item"><a href="#" class="p-2"><i class="fa fa-instagram"></i></a></li>
-              <li class="list-inline-item"><a href="#" class="p-2"><i class="fa fa-tripadvisor"></i></a></li>
-            </ul>
-          </div>
-        </div>
         <div class="row">
           <div class="col text-center">
             <p>&copy; 2026 Brothers Hospitality P.A.M. — Servicii premium de evenimente. Toate drepturile rezervate.</p>
@@ -656,10 +667,10 @@
         tabs.forEach(function(tab, index) {
           tab.addEventListener('shown.bs.tab', function() { activeIndex = index; });
         });
-        var rotateInterval = setInterval(nextTab, 5000);
+        // Auto-rotation disabled — user requested no autoscroll/auto-rotate
+        var rotateInterval = null;
         function resetInterval() {
-          clearInterval(rotateInterval);
-          rotateInterval = setInterval(nextTab, 5000);
+          // no-op while auto-rotation is disabled
         }
         document.querySelector('.service-tab-next').addEventListener('click', function() {
           nextTab();

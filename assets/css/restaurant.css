@@ -103,8 +103,8 @@ a {
 }
 @media (max-width: 575.98px) { .card-deck { display: block; } .card-deck .card { margin-bottom: 15px; } }
 
-/* ---- Vanilla lightbox (replaces Magnific Popup) ---- */
-.uic-lightbox {
+/* ---- Vanilla lightbox ---- */
+.site-lightbox {
   display: none;
   position: fixed;
   inset: 0;
@@ -113,19 +113,19 @@ a {
   align-items: center;
   justify-content: center;
 }
-.uic-lightbox.open { display: flex; }
-.uic-lightbox .lb-stage { max-width: 90vw; max-height: 88vh; }
-.uic-lightbox .lb-stage img { max-width: 90vw; max-height: 88vh; display: block; }
-.uic-lightbox .lb-video {
+.site-lightbox.open { display: flex; }
+.site-lightbox .lb-stage { max-width: 90vw; max-height: 88vh; }
+.site-lightbox .lb-stage img { max-width: 90vw; max-height: 88vh; display: block; }
+.site-lightbox .lb-video {
   position: relative;
   width: 90vw;
   max-width: 900px;
   aspect-ratio: 16 / 9;
 }
-.uic-lightbox .lb-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
-.uic-lightbox .lb-close,
-.uic-lightbox .lb-prev,
-.uic-lightbox .lb-next {
+.site-lightbox .lb-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+.site-lightbox .lb-close,
+.site-lightbox .lb-prev,
+.site-lightbox .lb-next {
   position: absolute;
   background: transparent;
   border: 0;
@@ -134,14 +134,14 @@ a {
   line-height: 1;
   opacity: 0.85;
 }
-.uic-lightbox .lb-close { top: 20px; right: 28px; font-size: 40px; }
-.uic-lightbox .lb-prev,
-.uic-lightbox .lb-next { top: 50%; transform: translateY(-50%); font-size: 60px; padding: 0 20px; }
-.uic-lightbox .lb-prev { left: 10px; }
-.uic-lightbox .lb-next { right: 10px; }
-.uic-lightbox .lb-close:hover,
-.uic-lightbox .lb-prev:hover,
-.uic-lightbox .lb-next:hover { opacity: 1; }
+.site-lightbox .lb-close { top: 20px; right: 28px; font-size: 40px; }
+.site-lightbox .lb-prev,
+.site-lightbox .lb-next { top: 50%; transform: translateY(-50%); font-size: 60px; padding: 0 20px; }
+.site-lightbox .lb-prev { left: 10px; }
+.site-lightbox .lb-next { right: 10px; }
+.site-lightbox .lb-close:hover,
+.site-lightbox .lb-prev:hover,
+.site-lightbox .lb-next:hover { opacity: 1; }
 
 /* CUSTOM THEME: White & Gold */
 :root {

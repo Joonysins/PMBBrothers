@@ -1,7 +1,3 @@
-/*
- * Instant — vanilla JS (no jQuery)
- * uiCookies / Divilab
- */
 (function () {
   'use strict';
 
@@ -43,8 +39,8 @@
 
   /* Smooth scroll for in-page anchors + close mobile nav */
   function initSmoothScroll() {
-    var links = document.querySelectorAll(".smoothscroll[href^='#'], #probootstrap-navbar ul li a[href^='#']");
-    var collapseEl = document.getElementById('probootstrap-navbar');
+    var links = document.querySelectorAll(".smoothscroll[href^='#'], #site-navbar ul li a[href^='#']:not(.no-smooth)");
+    var collapseEl = document.getElementById('site-navbar');
     links.forEach(function (link) {
       link.addEventListener('click', function (e) {
         var hash = link.getAttribute('href');
@@ -63,14 +59,14 @@
     });
   }
 
-  /* Lightbox — replaces Magnific Popup (images + video iframe) */
+  /* Lightbox for gallery images and video embeds */
   function initLightbox() {
     var imageLinks = Array.prototype.slice.call(document.querySelectorAll('.image-popup'));
     var videoLinks = Array.prototype.slice.call(document.querySelectorAll('.popup-vimeo, .popup-youtube, .popup-gmaps'));
     if (!imageLinks.length && !videoLinks.length) return;
 
     var lb = document.createElement('div');
-    lb.className = 'uic-lightbox';
+    lb.className = 'site-lightbox';
     lb.setAttribute('role', 'dialog');
     lb.setAttribute('aria-modal', 'true');
     lb.innerHTML =
