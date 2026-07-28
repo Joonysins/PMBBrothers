@@ -220,61 +220,135 @@
     </nav>
     <!-- END nav -->
 
-    <!-- Hero servicii -->
-    <section class="pb_cover_v1 cover-bg-black cover-bg-opacity-4 text-center" style="background-image: url(assets/images/restaurant/1900x1200/img_1.jpg)" id="section-services-hero">
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-md-9 order-md-1">
-            <h2 style="text-align:center;">Serviciile Noastre</h2>
-            <p style="text-align:center;">
-              Punem la dispoziție personal de ospitalitate profesionist — ospătari, barmani și coordonatori de eveniment — pentru trei tipuri principale de evenimente. Alege categoria potrivită pentru a afla mai multe.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- END section -->
+<!-- Hero servicii -->
+<section class="pb_cover_v1 cover-bg-black cover-bg-opacity-4 text-center" style="background-image: url(assets/images/restaurant/1900x1200/img_2.png)" id="section-services-hero">
+  <div class="services-hero-overlay"></div>
 
-    <!-- Categorii servicii -->
-    <section class="pb_section" id="section-services">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-lg-4">
-            <div class="service-card">
-              <img src="assets/images/restaurant/800x975/img_4.jpg" alt="Serviciu organizare nuntă">
-              <div class="service-card-body">
-                <small class="text-uppercase pb_color-dark-opacity-3 fw-bold pb_letter-spacing-2">Nuntă</small>
-                <h4 class="card-title mt-2 mb-3">Nuntă de poveste, fără griji</h4>
-                <p class="card-text">Coordonare completă, personal de ospitalitate dedicat și atenție la fiecare detaliu, pentru ca ziua voastră cea mare să decurgă perfect, indiferent de locația aleasă.</p>
-                <a href="nunta.html" class="service-card-link">Detalii <i class="ion-arrow-right-c"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="service-card">
-              <img src="assets/images/restaurant/800x975/img_6.jpg" alt="Serviciu organizare botez">
-              <div class="service-card-body">
-                <small class="text-uppercase pb_color-dark-opacity-3 fw-bold pb_letter-spacing-2">Botez</small>
-                <h4 class="card-title mt-2 mb-3">Botez organizat cu grijă</h4>
-                <p class="card-text">De la coordonarea ceremoniei până la servirea invitaților, asigurăm o atmosferă caldă și profesionistă pentru una dintre cele mai importante zile ale familiei voastre.</p>
-                <a href="botez.html" class="service-card-link">Detalii <i class="ion-arrow-right-c"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="service-card">
-              <img src="assets/images/restaurant/800x975/img_8.jpg" alt="Serviciu organizare eveniment business">
-              <div class="service-card-body">
-                <small class="text-uppercase pb_color-dark-opacity-3 fw-bold pb_letter-spacing-2">Eveniment Business</small>
-                <h4 class="card-title mt-2 mb-3">Evenimente de business impecabile</h4>
-                <p class="card-text">Conferințe, lansări de produse și gale corporate susținute de personal profesionist și servicii de ospitalitate adaptate identității companiei tale.</p>
-                <a href="business.html" class="service-card-link">Detalii <i class="ion-arrow-right-c"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-md-9 order-md-1">
+        <h2 style="text-align:center;">Serviciile Noastre</h2>
+        <p style="text-align:center;">
+          Punem la dispoziție personal de ospitalitate profesionist — ospătari, barmani și coordonatori de eveniment — pentru trei tipuri principale de evenimente. Alege categoria potrivită pentru a afla mai multe.
+        </p>
       </div>
-    </section>
-    <!-- END section -->
+    </div>
+  </div>
+</section>
+
+<style>
+  #section-services-hero{
+    position: relative;
+    z-index: 0;
+  }
+
+  #section-services-hero .services-hero-overlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.65); /* try 0.5 to 0.8 */
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  #section-services-hero .container{
+    position: relative;
+    z-index: 1;
+  }
+</style>
+<!-- END section -->
+
+<!-- Categorii servicii -->
+<section class="pb_section" id="section-services">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <a class="service-card-link-wrap" href="nunta.html" aria-label="Detalii Nuntă">
+          <div class="service-card">
+            <img src="assets/images/restaurant/800x975/img_4.jpg" alt="Serviciu organizare nuntă">
+
+            <div class="service-card-body">
+              <small class="text-uppercase pb_color-dark-opacity-3 fw-bold pb_letter-spacing-2">Nuntă</small>
+              <h4 class="card-title mt-2 mb-3">Nuntă de poveste, fără griji</h4>
+
+              <p class="card-text">
+                Coordonare completă, personal de ospitalitate dedicat și atenție la fiecare detaliu, pentru ca ziua voastră cea mare să decurgă perfect, indiferent de locația aleasă.
+              </p>
+
+              <div class="service-card-cta">
+                Detalii <i class="ion-arrow-right-c"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-4">
+        <a class="service-card-link-wrap" href="botez.html" aria-label="Detalii Botez">
+          <div class="service-card">
+            <img src="assets/images/restaurant/800x975/img_6.jpg" alt="Serviciu organizare botez">
+
+            <div class="service-card-body">
+              <small class="text-uppercase pb_color-dark-opacity-3 fw-bold pb_letter-spacing-2">Botez</small>
+              <h4 class="card-title mt-2 mb-3">Botez organizat cu grijă</h4>
+
+              <p class="card-text">
+                De la coordonarea ceremoniei până la servirea invitaților, asigurăm o atmosferă caldă și profesionistă pentru una dintre cele mai importante zile ale familiei voastre.
+              </p>
+
+              <div class="service-card-cta">
+                Detalii <i class="ion-arrow-right-c"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-4">
+        <a class="service-card-link-wrap" href="business.html" aria-label="Detalii Eveniment Business">
+          <div class="service-card">
+            <img src="assets/images/restaurant/800x975/img_8.jpg" alt="Serviciu organizare eveniment business">
+
+            <div class="service-card-body">
+              <small class="text-uppercase pb_color-dark-opacity-3 fw-bold pb_letter-spacing-2">Eveniment Business</small>
+              <h4 class="card-title mt-2 mb-3">Evenimente de business impecabile</h4>
+
+              <p class="card-text">
+                Conferințe, lansări de produse și gale corporate susținute de personal profesionist și servicii de ospitalitate adaptate identității companiei tale.
+              </p>
+
+              <div class="service-card-cta">
+                Detalii <i class="ion-arrow-right-c"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .service-card-link-wrap{
+    display: block;
+    text-decoration: none;
+  }
+
+  /* Force black text inside the card (fixes “white text” issue) */
+  .service-card-link-wrap .card-title,
+  .service-card-link-wrap .card-text,
+  .service-card-link-wrap small{
+    color: #000 !important;
+  }
+
+  .service-card-link-wrap .service-card-cta{
+    color: #000 !important;
+  }
+
+  .service-card-link-wrap:hover .service-card-cta{
+    color: #000 !important;
+  }
+</style>
 
     <footer class="pb_footer bg-light" role="contentinfo">
       <div class="container">
