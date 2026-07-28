@@ -681,41 +681,52 @@
           resetInterval();
         });
       });
-    </script>
-/* Cookie banner (IDs come from the HTML we provided) */
+/* Cookie banner: force it to behave like a fixed banner */
 #cookie-banner{
+  position: fixed !important;
+  left: 16px !important;
+  right: 16px !important;
+  bottom: 16px !important;
+
+  z-index: 99999 !important;
+
+  display: none !important; /* JS controls showing */
+  opacity: 1 !important;
+
   background: #F7F3EA !important;
   color: #2B2620 !important;
+
+  padding: 18px 18px !important;
+  border-radius: 14px !important;
+
   border: 1px solid rgba(31,59,44,0.25) !important;
   box-shadow: 0 10px 30px rgba(0,0,0,0.10) !important;
-  border-radius: 14px !important;
-  font-family: inherit; /* matches your site */
+
+  font-family: Arial, sans-serif !important;
 }
 
-#cookie-banner .cookie-title,
-#cookie-banner [style*="Cookie Preferences"]{
-  color: #2B2620 !important;
+/* Make sure banner children are not forced to display as inline text */
+#cookie-banner *{
+  box-sizing: border-box !important;
 }
 
-/* Body text */
-#cookie-banner{
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
+/* Headings/labels readable */
+#cookie-banner label,
 #cookie-banner #cookie-settings{
-  border-top: 1px solid rgba(31,59,44,0.25) !important;
+  color: #6B655C !important;
 }
 
-/* Buttons */
-#cookie-banner button{
+/* Buttons (CTA accent) */
+#cookie-banner #btn-analytics,
+#cookie-banner #btn-save{
+  background: #B8955C !important;
+  color: #2B2620 !important;
+  border: 1px solid rgba(184,149,92,0.85) !important;
   border-radius: 12px !important;
   font-weight: 800 !important;
-  padding: 10px 16px !important;
-  transition: transform 0.08s ease, background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
-/* Necessary + Reject (secondary/outline) */
+/* Outline buttons */
 #cookie-banner #btn-necessary,
 #cookie-banner #btn-reject,
 #cookie-banner #btn-settings,
@@ -723,45 +734,13 @@
   background: transparent !important;
   color: #2B2620 !important;
   border: 1px solid rgba(31,59,44,0.35) !important;
-}
-
-#cookie-banner #btn-necessary:hover,
-#cookie-banner #btn-reject:hover,
-#cookie-banner #btn-settings:hover,
-#cookie-banner #btn-close-settings:hover{
-  background: rgba(31,59,44,0.06) !important;
-  border-color: rgba(31,59,44,0.55) !important;
-}
-
-/* Primary CTA (Accent/CTA) */
-#cookie-banner #btn-analytics,
-#cookie-banner #btn-save{
-  background: #B8955C !important;
-  color: #2B2620 !important;
-  border: 1px solid rgba(184,149,92,0.85) !important;
-}
-
-#cookie-banner #btn-analytics:hover,
-#cookie-banner #btn-save:hover{
-  background: #B8955C !important;
-  filter: brightness(0.97);
+  border-radius: 12px !important;
+  font-weight: 800 !important;
 }
 
 /* Checkbox accent */
 #cookie-banner input[type="checkbox"]{
   accent-color: #B8955C !important;
-}
-
-/* Secondary text */
-#cookie-banner #cookie-settings,
-#cookie-banner label{
-  color: #6B655C !important;
-}
-
-/* Make sure any “Detalii”-like text or links inside banner stay readable */
-#cookie-banner a, 
-#cookie-banner span{
-  color: #2B2620 !important;
 }
 
   </body>
