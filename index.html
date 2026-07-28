@@ -682,163 +682,87 @@
         });
       });
     </script>
-<!-- Cookie banner (place near the end of <body>) -->
-<div id="cookie-banner" style="
-  position: fixed; left: 16px; right: 16px; bottom: 16px;
-  background: rgba(15,15,15,0.95); color: #fff;
-  padding: 14px; border-radius: 12px; z-index: 99999;
-  font-family: Arial, sans-serif; display: none;
-">
-  <div style="max-width: 1100px; margin: 0 auto;">
-    <div style="font-weight: 700; margin-bottom: 6px;">Cookie Preferences</div>
-    <div style="opacity: 0.95; font-size: 14px; line-height: 1.4;">
-      We use cookies to run the website and to understand how you use it.
-      Choose whether to allow analytics cookies.
-    </div>
+/* Cookie banner (IDs come from the HTML we provided) */
+#cookie-banner{
+  background: #F7F3EA !important;
+  color: #2B2620 !important;
+  border: 1px solid rgba(31,59,44,0.25) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.10) !important;
+  border-radius: 14px !important;
+  font-family: inherit; /* matches your site */
+}
 
-    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
-      <button id="btn-necessary" type="button"
-        style="padding: 10px 14px; border-radius: 10px; border: 1px solid #999; background: transparent; color: #fff;">
-        Necessary only
-      </button>
+#cookie-banner .cookie-title,
+#cookie-banner [style*="Cookie Preferences"]{
+  color: #2B2620 !important;
+}
 
-      <button id="btn-analytics" type="button"
-        style="padding: 10px 14px; border-radius: 10px; border: 1px solid #4da3ff; background: #4da3ff; color: #000; font-weight: 700;">
-        Allow analytics
-      </button>
+/* Body text */
+#cookie-banner{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-      <button id="btn-reject" type="button"
-        style="padding: 10px 14px; border-radius: 10px; border: 1px solid #999; background: transparent; color: #fff;">
-        Reject analytics
-      </button>
+#cookie-banner #cookie-settings{
+  border-top: 1px solid rgba(31,59,44,0.25) !important;
+}
 
-      <button id="btn-settings" type="button"
-        style="padding: 10px 14px; border-radius: 10px; border: 1px solid #999; background: transparent; color: #fff;">
-        Settings
-      </button>
-    </div>
+/* Buttons */
+#cookie-banner button{
+  border-radius: 12px !important;
+  font-weight: 800 !important;
+  padding: 10px 16px !important;
+  transition: transform 0.08s ease, background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
 
-    <div id="cookie-settings" style="display:none; margin-top: 12px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 12px;">
-      <div style="font-size: 14px; margin-bottom: 10px;">Analytics cookies</div>
+/* Necessary + Reject (secondary/outline) */
+#cookie-banner #btn-necessary,
+#cookie-banner #btn-reject,
+#cookie-banner #btn-settings,
+#cookie-banner #btn-close-settings{
+  background: transparent !important;
+  color: #2B2620 !important;
+  border: 1px solid rgba(31,59,44,0.35) !important;
+}
 
-      <label style="display:flex; align-items:center; gap:10px; cursor:pointer; font-size: 14px;">
-        <input id="toggle-analytics" type="checkbox" />
-        Allow analytics cookies
-      </label>
+#cookie-banner #btn-necessary:hover,
+#cookie-banner #btn-reject:hover,
+#cookie-banner #btn-settings:hover,
+#cookie-banner #btn-close-settings:hover{
+  background: rgba(31,59,44,0.06) !important;
+  border-color: rgba(31,59,44,0.55) !important;
+}
 
-      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px;">
-        <button id="btn-save" type="button"
-          style="padding: 10px 14px; border-radius: 10px; border: 1px solid #4da3ff; background: #4da3ff; color: #000; font-weight: 700;">
-          Save preferences
-        </button>
+/* Primary CTA (Accent/CTA) */
+#cookie-banner #btn-analytics,
+#cookie-banner #btn-save{
+  background: #B8955C !important;
+  color: #2B2620 !important;
+  border: 1px solid rgba(184,149,92,0.85) !important;
+}
 
-        <button id="btn-close-settings" type="button"
-          style="padding: 10px 14px; border-radius: 10px; border: 1px solid #999; background: transparent; color: #fff;">
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
+#cookie-banner #btn-analytics:hover,
+#cookie-banner #btn-save:hover{
+  background: #B8955C !important;
+  filter: brightness(0.97);
+}
 
-<script>
-(function () {
-  // Your GA4 Measurement ID:
-  const GA_MEASUREMENT_ID = 'G-N04YSVNG58';
+/* Checkbox accent */
+#cookie-banner input[type="checkbox"]{
+  accent-color: #B8955C !important;
+}
 
-  // Consent storage
-  const CONSENT_KEY = 'cookie_consent_ga_v1';
-  const CONSENT_ANALYTICS_ALLOWED = 'accepted';
+/* Secondary text */
+#cookie-banner #cookie-settings,
+#cookie-banner label{
+  color: #6B655C !important;
+}
 
-  function getConsent() {
-    return localStorage.getItem(CONSENT_KEY);
-  }
+/* Make sure any “Detalii”-like text or links inside banner stay readable */
+#cookie-banner a, 
+#cookie-banner span{
+  color: #2B2620 !important;
+}
 
-  function setConsent(value) {
-    localStorage.setItem(CONSENT_KEY, value);
-  }
-
-  const banner = document.getElementById('cookie-banner');
-  const btnNecessary = document.getElementById('btn-necessary');
-  const btnAnalytics = document.getElementById('btn-analytics');
-  const btnReject = document.getElementById('btn-reject');
-  const btnSettings = document.getElementById('btn-settings');
-
-  const settingsBox = document.getElementById('cookie-settings');
-  const toggleAnalytics = document.getElementById('toggle-analytics');
-  const btnSave = document.getElementById('btn-save');
-  const btnCloseSettings = document.getElementById('btn-close-settings');
-
-  function showBanner() { banner.style.display = 'block'; }
-  function hideBanner() { banner.style.display = 'none'; }
-
-  function loadGoogleAnalytics() {
-    // prevent double-load
-    if (window.__ga_loaded) return;
-    window.__ga_loaded = true;
-
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag(){ window.dataLayer.push(arguments); }
-    window.gtag = gtag;
-
-    gtag('js', new Date());
-    gtag('config', GA_MEASUREMENT_ID);
-
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_MEASUREMENT_ID);
-    document.head.appendChild(script);
-  }
-
-  function applyStoredConsent() {
-    const consent = getConsent();
-    if (consent === CONSENT_ANALYTICS_ALLOWED) {
-      loadGoogleAnalytics();
-    }
-  }
-
-  // Init banner visibility
-  if (!getConsent()) showBanner();
-
-  // Button actions
-  btnNecessary.addEventListener('click', function () {
-    setConsent('necessary-only');
-    hideBanner();
-  });
-
-  btnReject.addEventListener('click', function () {
-    setConsent('rejected');
-    hideBanner();
-  });
-
-  btnAnalytics.addEventListener('click', function () {
-    setConsent(CONSENT_ANALYTICS_ALLOWED);
-    hideBanner();
-    loadGoogleAnalytics();
-  });
-
-  btnSettings.addEventListener('click', function () {
-    settingsBox.style.display = 'block';
-    toggleAnalytics.checked = (getConsent() === CONSENT_ANALYTICS_ALLOWED);
-  });
-
-  btnCloseSettings.addEventListener('click', function () {
-    settingsBox.style.display = 'none';
-  });
-
-  btnSave.addEventListener('click', function () {
-    const allowAnalytics = !!toggleAnalytics.checked;
-    setConsent(allowAnalytics ? CONSENT_ANALYTICS_ALLOWED : 'rejected');
-    settingsBox.style.display = 'none';
-    hideBanner();
-
-    if (allowAnalytics) loadGoogleAnalytics();
-  });
-
-  // Apply consent on load
-  applyStoredConsent();
-})();
-</script>
   </body>
 </html>
