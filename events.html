@@ -3,25 +3,25 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Portofoliu - Brothers Hospitality P.A.M.</title>
-    <meta name="description" content="Descoperă evenimentele organizate de Brothers Hospitality P.A.M.: nunți, boteze și evenimente de business.">
-    <meta name="keywords" content="portofoliu evenimente, nunți, boteze, evenimente business, ospitalitate, PAM Brothers">
+    <title>Servicii - Brothers Hospitality P.A.M.</title>
+    <meta name="description" content="Serviciile Brothers Hospitality P.A.M.: organizare de nuntă, botez și evenimente business, cu personal de ospitalitate profesionist.">
+    <meta name="keywords" content="servicii evenimente, organizare nunta, organizare botez, eveniment business, ospatari, barmani, ospitalitate">
     <meta name="robots" content="index, follow">
     <!-- Open Graph / Social Meta Tags -->
-    <meta property="og:title" content="Portofoliu - Brothers Hospitality P.A.M.">
-    <meta property="og:description" content="Descoperă evenimentele organizate de Brothers Hospitality P.A.M.: nunți, boteze și evenimente de business.">
+    <meta property="og:title" content="Servicii - Brothers Hospitality P.A.M.">
+    <meta property="og:description" content="Serviciile Brothers Hospitality P.A.M.: organizare de nuntă, botez și evenimente business, cu personal de ospitalitate profesionist.">
     <meta property="og:image" content="https://pambrothers.com/assets/images/restaurant/1900x1200/img_1.jpg">
     <meta property="og:image:alt" content="Brothers Hospitality event photo">
     <meta property="og:image:width" content="1440">
     <meta property="og:image:height" content="1080">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pambrothers.com/portofoliu.html">
+    <meta property="og:url" content="https://pambrothers.com/events.html">
     <meta property="og:site_name" content="Brothers Hospitality P.A.M.">
     <meta property="og:locale" content="ro_RO">
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Portofoliu - Brothers Hospitality P.A.M.">
-    <meta name="twitter:description" content="Descoperă evenimentele organizate de Brothers Hospitality P.A.M.: nunți, boteze și evenimente de business.">
+    <meta name="twitter:title" content="Servicii - Brothers Hospitality P.A.M.">
+    <meta name="twitter:description" content="Serviciile Brothers Hospitality P.A.M.: organizare de nuntă, botez și evenimente business, cu personal de ospitalitate profesionist.">
     <meta name="twitter:image" content="https://pambrothers.com/assets/images/restaurant/1900x1200/img_1.jpg">
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600|Montserrat:200,300,400, 600, 700" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css">
@@ -144,70 +144,43 @@
         background: rgba(247, 243, 234, 0.7) !important;
       }
 
-      /* --- Portofoliu: navigație rapidă între categorii --- */
-      .portfolio-jump {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-      }
-      .portfolio-jump .nav-link {
-        padding: 0.75rem 1.5rem;
-        border-radius: 999px;
-        background: #ffffff;
-        color: var(--site-text) !important;
-        border: 1px solid var(--site-accent-dark);
-        font-size: 0.85rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        transition: background .25s ease, color .25s ease;
-      }
-      .portfolio-jump .nav-link:hover,
-      .portfolio-jump .nav-link.active {
-        background: var(--site-accent) !important;
-        color: var(--site-text) !important;
-      }
-
-      /* --- Galerie foto --- */
-      .portfolio-category {
-        scroll-margin-top: 140px;
-      }
-      .portfolio-gallery {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-      }
-      .portfolio-gallery figure {
-        margin: 0;
+      /* --- Servicii: carduri categorie --- */
+      .service-card {
+        background: #ffffff !important;
+        border-radius: 20px;
         overflow: hidden;
-        border-radius: 16px;
-        position: relative;
-        aspect-ratio: 4 / 5;
-      }
-      .portfolio-gallery img {
-        width: 100%;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: transform .3s ease, box-shadow .3s ease;
+      }
+      .service-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px rgba(31,59,44,0.12);
+      }
+      .service-card img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
         object-fit: cover;
         display: block;
-        transition: transform .4s ease;
       }
-      .portfolio-gallery figure:hover img {
-        transform: scale(1.06);
+      .service-card .service-card-body {
+        padding: 2rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
       }
-      .portfolio-category-intro {
-        max-width: 760px;
-        margin-left: auto;
-        margin-right: auto;
+      .service-card .service-card-body p {
+        flex: 1;
       }
-      @media (max-width: 767px) {
-        .portfolio-gallery {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-      @media (max-width: 480px) {
-        .portfolio-gallery {
-          grid-template-columns: 1fr 1fr;
-          gap: 0.6rem;
-        }
+      .service-card-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.85rem;
       }
     </style>
   </head>
@@ -229,10 +202,9 @@
           </div>
           <ul class="navbar-nav mx-auto d-flex align-items-center">
             <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="index.html#section-about">Despre</a></li>
-            <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="index.html#section-menu">Servicii</a></li>
-            <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="index.html#section-gallery">Galerie</a></li>
-            <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="evenimente.html">Evenimente</a></li>
+            <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2 active" href="events.html">Servicii</a></li>
             <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="portofoliu.html">Portofoliu</a></li>
+            <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="index.html#section-events">Evenimente</a></li>
             <li class="nav-item"><a class="nav-link p-2" href="https://www.instagram.com/brothersp.a.m/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
           </ul>
           <div class="d-flex align-items-center ms-3 ms-auto navbar-text flex-column flex-md-row">
@@ -248,103 +220,58 @@
     </nav>
     <!-- END nav -->
 
-    <!-- Hero portofoliu -->
-    <section class="pb_cover_v1 cover-bg-black cover-bg-opacity-4 text-center" style="background-image: url(assets/images/restaurant/1900x1200/img_2.jpg)" id="section-portfolio-hero">
+    <!-- Hero servicii -->
+    <section class="pb_cover_v1 cover-bg-black cover-bg-opacity-4 text-center" style="background-image: url(assets/images/restaurant/1900x1200/img_1.jpg)" id="section-services-hero">
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-9 order-md-1">
-            <h2 class="heading mb-3">Portofoliul Nostru</h2>
-            <div class="sub-heading"><p class="mb-5">O selecție din evenimentele organizate de echipa PAM Brothers — nunți, boteze și evenimente de business. Fiecare imagine spune povestea unei zile pregătite cu grijă, de la primul detaliu până la ultimul toast.</p></div>
+            <h2 style="text-align:center;">Serviciile Noastre</h2>
+            <p style="text-align:center;">
+              Punem la dispoziție personal de ospitalitate profesionist — ospătari, barmani și coordonatori de eveniment — pentru trei tipuri principale de evenimente. Alege categoria potrivită pentru a afla mai multe.</p>
           </div>
         </div>
       </div>
     </section>
     <!-- END section -->
 
-    <!-- Navigație rapidă între categorii -->
-    <section class="pb_section pb-0" style="padding-bottom: 0;">
+    <!-- Categorii servicii -->
+    <section class="pb_section" id="section-services">
       <div class="container">
-        <ul class="nav portfolio-jump">
-          <li class="nav-item"><a class="nav-link" href="#portfolio-nunti">Nunți</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio-boteze">Boteze</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio-business">Evenimente Business</a></li>
-        </ul>
-      </div>
-    </section>
-    <!-- END section -->
-
-    <!-- Categorie: Nunți -->
-    <section class="pb_section portfolio-category" id="portfolio-nunti">
-      <div class="container">
-        <div class="row justify-content-center mb-4">
-          <div class="col-md-10 text-center">
-            <small class="text-uppercase pb_color-dark-opacity-3 fw-bold pb_letter-spacing-2">Nunți</small>
-            <h2 class="mb-3 text-uppercase pb_letter-spacing-2">Nunți Organizate de PAM Brothers</h2>
-            <p class="portfolio-category-intro">De la ceremonii intime la petreceri de proporții, fiecare nuntă din portofoliul nostru reflectă atenția la detalii, eleganța decorului și profesionalismul echipei de ospitalitate care a avut grijă ca totul să decurgă fără cusur.</p>
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="service-card">
+              <img src="assets/images/restaurant/800x975/img_4.jpg" alt="Serviciu organizare nuntă">
+              <div class="service-card-body">
+                <small class="text-uppercase pb_color-dark-opacity-3 fw-bold pb_letter-spacing-2">Nuntă</small>
+                <h4 class="card-title mt-2 mb-3">Nuntă de poveste, fără griji</h4>
+                <p class="card-text">Coordonare completă, personal de ospitalitate dedicat și atenție la fiecare detaliu, pentru ca ziua voastră cea mare să decurgă perfect, indiferent de locația aleasă.</p>
+                <a href="nunta.html" class="service-card-link">Detalii <i class="ion-arrow-right-c"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="service-card">
+              <img src="assets/images/restaurant/800x975/img_6.jpg" alt="Serviciu organizare botez">
+              <div class="service-card-body">
+                <small class="text-uppercase pb_color-dark-opacity-3 fw-bold pb_letter-spacing-2">Botez</small>
+                <h4 class="card-title mt-2 mb-3">Botez organizat cu grijă</h4>
+                <p class="card-text">De la coordonarea ceremoniei până la servirea invitaților, asigurăm o atmosferă caldă și profesionistă pentru una dintre cele mai importante zile ale familiei voastre.</p>
+                <a href="botez.html" class="service-card-link">Detalii <i class="ion-arrow-right-c"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="service-card">
+              <img src="assets/images/restaurant/800x975/img_8.jpg" alt="Serviciu organizare eveniment business">
+              <div class="service-card-body">
+                <small class="text-uppercase pb_color-dark-opacity-3 fw-bold pb_letter-spacing-2">Eveniment Business</small>
+                <h4 class="card-title mt-2 mb-3">Evenimente de business impecabile</h4>
+                <p class="card-text">Conferințe, lansări de produse și gale corporate susținute de personal profesionist și servicii de ospitalitate adaptate identității companiei tale.</p>
+                <a href="business.html" class="service-card-link">Detalii <i class="ion-arrow-right-c"></i></a>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="portfolio-gallery">
-          <figure><img src="assets/images/restaurant/800x975/img_10.jpg" alt="Nuntă organizată de PAM Brothers - decor sală"></figure>
-          <figure><img src="assets/images/restaurant/800x975/img_11.jpg" alt="Nuntă organizată de PAM Brothers - aranjamente florale"></figure>
-          <figure><img src="assets/images/restaurant/800x975/img_12.jpg" alt="Nuntă organizată de PAM Brothers - masa mirilor"></figure>
-          <figure><img src="assets/images/restaurant/800x975/img_13.jpg" alt="Nuntă organizată de PAM Brothers - petrecere"></figure>
-          <figure><img src="assets/images/restaurant/800x975/img_14.jpg" alt="Nuntă organizată de PAM Brothers - servire invitați"></figure>
-          <figure><img src="assets/images/restaurant/800x975/img_15.jpg" alt="Nuntă organizată de PAM Brothers - tort de nuntă"></figure>
-        </div>
-      </div>
-    </section>
-    <!-- END section -->
-
-    <!-- Categorie: Boteze -->
-    <section class="pb_section bg-light portfolio-category" id="portfolio-boteze">
-      <div class="container">
-        <div class="row justify-content-center mb-4">
-          <div class="col-md-10 text-center">
-            <small class="text-uppercase pb_color-dark-opacity-3 fw-bold pb_letter-spacing-2">Boteze</small>
-            <h2 class="mb-3 text-uppercase pb_letter-spacing-2">Boteze Organizate de PAM Brothers</h2>
-            <p class="portfolio-category-intro">Momente de credință și bucurie transformate în amintiri de neuitat, cu decor spiritual elegant, meniuri adaptate pentru toată familia și o coordonare atentă a fiecărui detaliu al zilei.</p>
-          </div>
-        </div>
-        <div class="portfolio-gallery">
-          <figure><img src="assets/images/restaurant/800x975/img_16.jpg" alt="Botez organizat de PAM Brothers - decor spiritual"></figure>
-          <figure><img src="assets/images/restaurant/800x975/img_17.jpg" alt="Botez organizat de PAM Brothers - aranjamente florale"></figure>
-          <figure><img src="assets/images/restaurant/800x975/img_18.jpg" alt="Botez organizat de PAM Brothers - masa festivă"></figure>
-          <figure><img src="assets/images/restaurant/800x975/img_19.jpg" alt="Botez organizat de PAM Brothers - petrecere familie"></figure>
-          <figure><img src="assets/images/restaurant/800x975/img_20.jpg" alt="Botez organizat de PAM Brothers - activități copii"></figure>
-          <figure><img src="assets/images/restaurant/800x975/img_21.jpg" alt="Botez organizat de PAM Brothers - tort de botez"></figure>
-        </div>
-      </div>
-    </section>
-    <!-- END section -->
-
-    <!-- Categorie: Evenimente Business -->
-    <section class="pb_section portfolio-category" id="portfolio-business">
-      <div class="container">
-        <div class="row justify-content-center mb-4">
-          <div class="col-md-10 text-center">
-            <small class="text-uppercase pb_color-dark-opacity-3 fw-bold pb_letter-spacing-2">Business</small>
-            <h2 class="mb-3 text-uppercase pb_letter-spacing-2">Evenimente Business Organizate de PAM Brothers</h2>
-            <p class="portfolio-category-intro">Conferințe, lansări de produse și gale corporate desfășurate cu profesionalism, tehnologie de ultimă generație și servicii de ospitalitate premium, adaptate identității fiecărei companii.</p>
-          </div>
-        </div>
-        <div class="portfolio-gallery">
-          <figure><img src="assets/images/restaurant/800x975/img_22.jpg" alt="Eveniment business organizat de PAM Brothers - conferință"></figure>
-          <figure><img src="assets/images/restaurant/800x975/img_23.jpg" alt="Eveniment business organizat de PAM Brothers - lansare produs"></figure>
-          <figure><img src="assets/images/restaurant/800x975/img_24.jpg" alt="Eveniment business organizat de PAM Brothers - gală corporate"></figure>
-          <figure><img src="assets/images/restaurant/800x975/img_25.jpg" alt="Eveniment business organizat de PAM Brothers - catering"></figure>
-          <figure><img src="assets/images/restaurant/800x975/img_26.jpg" alt="Eveniment business organizat de PAM Brothers - networking"></figure>
-          <figure><img src="assets/images/restaurant/800x975/img_27.jpg" alt="Eveniment business organizat de PAM Brothers - decor scenă"></figure>
-        </div>
-      </div>
-    </section>
-    <!-- END section -->
-
-    <!-- Call to action -->
-    <section class="pb_section bg-light text-center">
-      <div class="container">
-        <h2 class="mb-3 text-uppercase pb_letter-spacing-2">Vrei un eveniment la fel de reușit?</h2>
-        <p class="portfolio-category-intro mb-4">Spune-ne ce sărbătorești și te ajutăm să transformi ideea într-un eveniment memorabil.</p>
-        <a href="https://wa.me/40772146083" role="button" class="btn pb_outline-light rounded-0 btn-xl pb_font-13 pb_letter-spacing-2 p-3">Contactează-ne</a>
       </div>
     </section>
     <!-- END section -->
@@ -364,28 +291,5 @@
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-      // Evidențiază link-ul din navigația rapidă corespunzător secțiunii vizibile
-      document.addEventListener('DOMContentLoaded', function () {
-        var jumpLinks = Array.from(document.querySelectorAll('.portfolio-jump .nav-link'));
-        var sections = jumpLinks
-          .map(function (link) { return document.querySelector(link.getAttribute('href')); })
-          .filter(Boolean);
-
-        function updateActive() {
-          var scrollPos = window.scrollY + 220;
-          var current = sections[0];
-          sections.forEach(function (section) {
-            if (section.offsetTop <= scrollPos) current = section;
-          });
-          jumpLinks.forEach(function (link) {
-            link.classList.toggle('active', link.getAttribute('href') === '#' + current.id);
-          });
-        }
-
-        window.addEventListener('scroll', updateActive);
-        updateActive();
-      });
-    </script>
   </body>
 </html>
