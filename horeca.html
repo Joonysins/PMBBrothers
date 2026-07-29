@@ -332,6 +332,127 @@
           grid-template-columns: 1fr;
         }
       }
+
+      /* --- Multi-select cu tag-uri --- */
+      .multiselect {
+        position: relative;
+      }
+      .multiselect-control {
+        width: 100%;
+        min-height: 52px;
+        border-radius: 12px;
+        border: 1px solid rgba(31, 59, 44, 0.2);
+        background: var(--site-bg);
+        padding: 0.5rem 0.9rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+        cursor: pointer;
+        text-align: left;
+      }
+      .multiselect-control:focus,
+      .multiselect-control.open {
+        outline: none;
+        border-color: var(--site-accent);
+        box-shadow: 0 0 0 0.2rem rgba(184, 149, 92, 0.2);
+        background: #ffffff;
+      }
+      .multiselect-tags {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        align-items: center;
+        gap: 0.4rem;
+        flex: 1;
+      }
+      .multiselect-placeholder {
+        color: var(--site-text);
+        opacity: 0.5;
+        font-size: 0.92rem;
+        white-space: nowrap;
+      }
+      .multiselect-tag {
+        background: var(--site-accent-dark);
+        color: #ffffff !important;
+        font-size: 0.78rem;
+        font-weight: 600;
+        padding: 0.3rem 0.75rem;
+        border-radius: 999px;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .multiselect-tag-more {
+        background: rgba(31, 59, 44, 0.12);
+        color: var(--site-text) !important;
+        font-size: 0.78rem;
+        padding: 0.3rem 0.6rem;
+        border-radius: 999px;
+        flex-shrink: 0;
+      }
+      .multiselect-count-badge {
+        background: var(--site-accent);
+        color: var(--site-text) !important;
+        font-size: 0.75rem;
+        font-weight: 700;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .multiselect-chevron {
+        color: var(--site-text);
+        opacity: 0.6;
+        flex-shrink: 0;
+        transition: transform .2s ease;
+      }
+      .multiselect-control.open .multiselect-chevron {
+        transform: rotate(180deg);
+      }
+      .multiselect-dropdown {
+        position: absolute;
+        top: calc(100% + 6px);
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        border: 1px solid rgba(31, 59, 44, 0.15);
+        border-radius: 14px;
+        box-shadow: 0 15px 35px rgba(31, 59, 44, 0.15);
+        padding: 0.6rem;
+        z-index: 20;
+        display: none;
+      }
+      .multiselect-dropdown.open {
+        display: block;
+      }
+      .multiselect-option {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        padding: 0.6rem 0.7rem;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-bottom: 0.2rem;
+      }
+      .multiselect-option:last-child {
+        margin-bottom: 0;
+      }
+      .multiselect-option:hover {
+        background: var(--site-bg);
+      }
+      .multiselect-option input {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--site-accent);
+        flex-shrink: 0;
+      }
+      .multiselect-option span {
+        font-size: 0.92rem;
+        color: var(--site-text);
+      }
     </style>
   </head>
   <body data-bs-spy="scroll" data-bs-target="#pb-navbar" data-bs-offset="200">
@@ -458,23 +579,31 @@
             </div>
             <div class="mb-3">
               <label>Ce tip de personal cauți?</label>
-              <div class="service-checkbox-group">
-                <label class="service-checkbox">
-                  <input type="checkbox" name="services" value="Ospătari">
-                  <span>Ospătari</span>
-                </label>
-                <label class="service-checkbox">
-                  <input type="checkbox" name="services" value="Barmani">
-                  <span>Barmani</span>
-                </label>
-                <label class="service-checkbox">
-                  <input type="checkbox" name="services" value="Personal bucătărie">
-                  <span>Personal bucătărie</span>
-                </label>
-                <label class="service-checkbox">
-                  <input type="checkbox" name="services" value="Alt tip de personal">
-                  <span>Alt tip de personal</span>
-                </label>
+              <div class="multiselect" id="services-multiselect">
+                <button type="button" class="multiselect-control" id="services-ms-control" aria-haspopup="listbox" aria-expanded="false">
+                  <div class="multiselect-tags" id="services-ms-tags">
+                    <span class="multiselect-placeholder">Alege tipul de personal</span>
+                  </div>
+                  <i class="fa fa-chevron-down multiselect-chevron" aria-hidden="true"></i>
+                </button>
+                <div class="multiselect-dropdown" id="services-ms-dropdown" role="listbox">
+                  <label class="multiselect-option">
+                    <input type="checkbox" class="ms-option-input" value="Ospătari">
+                    <span>Ospătari</span>
+                  </label>
+                  <label class="multiselect-option">
+                    <input type="checkbox" class="ms-option-input" value="Barmani">
+                    <span>Barmani</span>
+                  </label>
+                  <label class="multiselect-option">
+                    <input type="checkbox" class="ms-option-input" value="Personal bucătărie">
+                    <span>Personal bucătărie</span>
+                  </label>
+                  <label class="multiselect-option">
+                    <input type="checkbox" class="ms-option-input" value="Alt tip de personal">
+                    <span>Alt tip de personal</span>
+                  </label>
+                </div>
               </div>
               <input type="hidden" id="services-hidden" name="services_list">
             </div>
@@ -590,6 +719,85 @@
         });
       });
 
+      // --- Componenta multi-select cu tag-uri ---
+      (function () {
+        var wrapper = document.getElementById('services-multiselect');
+        var control = document.getElementById('services-ms-control');
+        var dropdown = document.getElementById('services-ms-dropdown');
+        var tagsBox = document.getElementById('services-ms-tags');
+        var hiddenInput = document.getElementById('services-hidden');
+        var optionInputs = Array.from(dropdown.querySelectorAll('.ms-option-input'));
+
+        function renderTags() {
+          var checked = optionInputs.filter(function (input) { return input.checked; });
+          tagsBox.innerHTML = '';
+
+          if (checked.length === 0) {
+            var placeholder = document.createElement('span');
+            placeholder.className = 'multiselect-placeholder';
+            placeholder.textContent = 'Alege tipul de personal';
+            tagsBox.appendChild(placeholder);
+            hiddenInput.value = '';
+            return;
+          }
+
+          var maxVisible = 2;
+          checked.slice(0, maxVisible).forEach(function (input) {
+            var tag = document.createElement('span');
+            tag.className = 'multiselect-tag';
+            tag.textContent = input.value;
+            tagsBox.appendChild(tag);
+          });
+
+          if (checked.length > maxVisible) {
+            var more = document.createElement('span');
+            more.className = 'multiselect-tag-more';
+            more.textContent = '...';
+            tagsBox.appendChild(more);
+
+            var badge = document.createElement('span');
+            badge.className = 'multiselect-count-badge';
+            badge.textContent = checked.length;
+            tagsBox.appendChild(badge);
+          }
+
+          hiddenInput.value = checked.map(function (input) { return input.value; }).join(', ');
+        }
+
+        function openDropdown() {
+          dropdown.classList.add('open');
+          control.classList.add('open');
+          control.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeDropdown() {
+          dropdown.classList.remove('open');
+          control.classList.remove('open');
+          control.setAttribute('aria-expanded', 'false');
+        }
+
+        control.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (dropdown.classList.contains('open')) {
+            closeDropdown();
+          } else {
+            openDropdown();
+          }
+        });
+
+        document.addEventListener('click', function (e) {
+          if (!wrapper.contains(e.target)) {
+            closeDropdown();
+          }
+        });
+
+        optionInputs.forEach(function (input) {
+          input.addEventListener('change', renderTags);
+        });
+
+        renderTags();
+      })();
+
       // --- Formular de contact (EmailJS) ---
       (function () {
         emailjs.init({ publicKey: 'OGqmfCb5vRChU5K9R' });
@@ -597,7 +805,6 @@
         var form = document.getElementById('horeca-contact-form');
         var statusBox = document.getElementById('contact-form-status');
         var submitBtn = document.getElementById('contact-submit-btn');
-        var servicesHidden = document.getElementById('services-hidden');
 
         function showStatus(message, type) {
           statusBox.textContent = message;
@@ -608,14 +815,6 @@
         form.addEventListener('submit', function (e) {
           e.preventDefault();
 
-          var checkedServices = Array.from(
-            form.querySelectorAll('input[name="services"]:checked')
-          ).map(function (input) { return input.value; });
-
-          servicesHidden.value = checkedServices.length
-            ? checkedServices.join(', ')
-            : 'Nespecificat';
-
           submitBtn.disabled = true;
           submitBtn.textContent = 'Se trimite...';
 
@@ -623,6 +822,12 @@
             .then(function () {
               showStatus('Mulțumim! Am primit solicitarea și te contactăm în curând.', 'success');
               form.reset();
+              document.getElementById('services-ms-tags').innerHTML = '';
+              var placeholder = document.createElement('span');
+              placeholder.className = 'multiselect-placeholder';
+              placeholder.textContent = 'Alege tipul de personal';
+              document.getElementById('services-ms-tags').appendChild(placeholder);
+              document.getElementById('services-hidden').value = '';
             })
             .catch(function (error) {
               console.error('EmailJS error:', error);
