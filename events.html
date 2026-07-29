@@ -360,10 +360,118 @@
       </div>
     </footer>
 
+    <!-- Cookie consent card -->
+    <div id="cookie-consent-card" class="d-none" role="dialog" aria-live="polite" aria-label="Setări cookie-uri">
+      <h5>Folosim cookie-uri</h5>
+      <p>Folosim cookie-uri esențiale pentru funcționarea site-ului și, opțional, cookie-uri suplimentare pentru a-ți îmbunătăți experiența. Poți alege ce accepți.</p>
+      <div class="cookie-btn-row">
+        <button type="button" id="cookie-accept-all" class="btn btn-cookie-accept">Accept toate</button>
+        <button type="button" id="cookie-essential-only" class="btn btn-cookie-essential">Doar esențiale</button>
+      </div>
+    </div>
+
     <!-- loader -->
     <div id="pb_loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#FDA04F"/></svg></div>
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var tabs = Array.from(document.querySelectorAll('.service-category-tabs .nav-link'));
+        var activeIndex = tabs.findIndex(function(tab){ return tab.classList.contains('active'); });
+        if (activeIndex < 0) activeIndex = 0;
+        function showTab(index) {
+          if (!tabs[index]) return;
+          var tab = new bootstrap.Tab(tabs[index]);
+          tab.show();
+        }
+        function setActiveIndex(index) {
+          activeIndex = (index + tabs.length) % tabs.length;
+        }
+        function nextTab() {
+          setActiveIndex(activeIndex + 1);
+          showTab(activeIndex);
+        }
+        function prevTab() {
+          setActiveIndex(activeIndex - 1);
+          showTab(activeIndex);
+        }
+        tabs.forEach(function(tab, index) {
+          tab.addEventListener('shown.bs.tab', function() { activeIndex = index; });
+        });
+        // Auto-rotation disabled — user requested no autoscroll/auto-rotate
+        var rotateInterval = null;
+        function resetInterval() {
+          // no-op while auto-rotation is disabled
+        }
+        document.querySelector('.service-tab-next').addEventListener('click', function() {
+          nextTab();
+          resetInterval();
+        });
+        document.querySelector('.service-tab-prev').addEventListener('click', function() {
+          prevTab();
+          resetInterval();
+        });
+      });
+
+      // --- Cookie consent logic ---
+      document.addEventListener('DOMContentLoaded', function () {
+        var CONSENT_KEY = 'pam_cookie_consent';
+        var card = document.getElementById('cookie-consent-card');
+        var acceptAllBtn = document.getElementById('cookie-accept-all');
+        var essentialOnlyBtn = document.getElementById('cookie-essential-only');
+
+        function getStoredConsent() {
+          try {
+            return localStorage.getItem(CONSENT_KEY);
+          } catch (e) {
+            return null;
+          }
+        }
+
+        function storeConsent(value) {
+          try {
+            localStorage.setItem(CONSENT_KEY, value);
+          } catch (e) {
+            // localStorage indisponibil (ex. mod privat) - cardul se va putea închide oricum
+          }
+        }
+
+        function hideCard() {
+          card.classList.add('d-none');
+        }
+
+        function updateGoogleConsent(granted) {
+          if (typeof gtag !== 'function') return;
+          gtag('consent', 'update', {
+            'analytics_storage': granted ? 'granted' : 'denied',
+            'ad_storage': granted ? 'granted' : 'denied',
+            'ad_user_data': granted ? 'granted' : 'denied',
+            'ad_personalization': granted ? 'granted' : 'denied'
+          });
+        }
+
+        var existingConsent = getStoredConsent();
+        if (!existingConsent) {
+          card.classList.remove('d-none');
+        } else {
+          // Reaplică alegerea anterioară la fiecare încărcare de pagină
+          updateGoogleConsent(existingConsent === 'all');
+        }
+
+        acceptAllBtn.addEventListener('click', function () {
+          storeConsent('all');
+          updateGoogleConsent(true);
+          hideCard();
+        });
+
+        essentialOnlyBtn.addEventListener('click', function () {
+          storeConsent('essential');
+          updateGoogleConsent(false);
+          hideCard();
+        });
+      });
+    </script>
   </body>
 </html>
+
