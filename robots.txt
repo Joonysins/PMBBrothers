@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pambrothers.com/sitemap.xml
