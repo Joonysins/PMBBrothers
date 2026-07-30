@@ -23,6 +23,41 @@
     <meta name="twitter:title" content="Portofoliu - Brothers Hospitality P.A.M.">
     <meta name="twitter:description" content="Descoperă evenimentele organizate de Brothers Hospitality P.A.M.: nunți, boteze și evenimente de business.">
     <meta name="twitter:image" content="https://pambrothers.com/assets/images/restaurant/1900x1200/img_1.jpg">
+
+    <!-- Google Consent Mode - setare implicită, înainte de încărcarea gtag.js -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      // Implicit "denied" doar în regiunile unde se aplică GDPR/legislație similară
+      // (Spațiul Economic European + Marea Britanie + Elveția)
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'region': [
+          'AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR',
+          'HU','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT',
+          'RO','SK','SI','ES','SE','IS','GB','CH'
+        ]
+      });
+
+      // Implicit "granted" pentru restul lumii (fără restricție de regiune)
+      gtag('consent', 'default', {
+        'analytics_storage': 'granted',
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted'
+      });
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N04YSVNG58"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-N04YSVNG58');
+    </script>
+
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600|Montserrat:200,300,400, 600, 700" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="assets/fonts/ionicons/css/ionicons.min.css">
@@ -209,6 +244,75 @@
           gap: 0.6rem;
         }
       }
+
+      /* --- Cookie consent card --- */
+      #cookie-consent-card {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 1080;
+        width: 320px;
+        max-width: calc(100vw - 40px);
+        background: #ffffff;
+        border-radius: 18px;
+        box-shadow: 0 15px 40px rgba(31, 59, 44, 0.2);
+        padding: 1.5rem;
+        border: 1px solid rgba(31, 59, 44, 0.1);
+      }
+      #cookie-consent-card.d-none {
+        display: none !important;
+      }
+      #cookie-consent-card h5 {
+        color: var(--site-text) !important;
+        font-size: 1.05rem;
+        font-weight: 700;
+        margin-bottom: 0.6rem;
+      }
+      #cookie-consent-card p {
+        color: var(--site-text) !important;
+        opacity: 0.85;
+        font-size: 0.88rem;
+        line-height: 1.5;
+        margin-bottom: 1.1rem;
+      }
+      #cookie-consent-card .cookie-btn-row {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+      #cookie-consent-card .btn {
+        border-radius: 999px !important;
+        font-size: 0.8rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 0.65rem 1rem;
+        width: 100%;
+        border: 1px solid var(--site-accent-dark);
+      }
+      #cookie-consent-card .btn-cookie-accept {
+        background: var(--site-accent) !important;
+        border-color: var(--site-accent) !important;
+        color: var(--site-text) !important;
+      }
+      #cookie-consent-card .btn-cookie-accept:hover {
+        background: #A07D4C !important;
+        border-color: #A07D4C !important;
+      }
+      #cookie-consent-card .btn-cookie-essential {
+        background: transparent !important;
+        color: var(--site-text) !important;
+      }
+      #cookie-consent-card .btn-cookie-essential:hover {
+        background: rgba(31, 59, 44, 0.08) !important;
+      }
+      @media (max-width: 480px) {
+        #cookie-consent-card {
+          right: 12px;
+          bottom: 12px;
+          left: 12px;
+          width: auto;
+        }
+      }
     </style>
   </head>
   <body data-bs-spy="scroll" data-bs-target="#pb-navbar" data-bs-offset="200">
@@ -228,10 +332,10 @@
             </a>
           </div>
           <ul class="navbar-nav mx-auto d-flex align-items-center">
-            <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="#section-about">Despre</a></li>
+            <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="index.html#section-about">Despre</a></li>
             <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="events.html">Servicii</a></li>
             <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="portofoliu.html">Portofoliu</a></li>
-            <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="#section-events">Evenimente</a></li>
+            <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="index.html#section-events">Evenimente</a></li>
             <li class="nav-item"><a class="nav-link p-2" href="https://www.instagram.com/brothersp.a.m/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
           </ul>
           <div class="d-flex align-items-center ms-3 ms-auto navbar-text flex-column flex-md-row">
@@ -358,9 +462,21 @@
       </div>
     </footer>
 
+    <!-- Cookie consent card -->
+    <div id="cookie-consent-card" class="d-none" role="dialog" aria-live="polite" aria-label="Setări cookie-uri">
+      <h5>Folosim cookie-uri</h5>
+      <p>Folosim cookie-uri esențiale pentru funcționarea site-ului și, opțional, cookie-uri suplimentare pentru a-ți îmbunătăți experiența. Poți alege ce accepți.</p>
+      <div class="cookie-btn-row">
+        <button type="button" id="cookie-accept-all" class="btn btn-cookie-accept">Accept toate</button>
+        <button type="button" id="cookie-essential-only" class="btn btn-cookie-essential">Doar esențiale</button>
+      </div>
+    </div>
+
     <!-- loader -->
     <div id="pb_loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#FDA04F"/></svg></div>
 
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
     <script>
       // Evidențiază link-ul din navigația rapidă corespunzător secțiunii vizibile
       document.addEventListener('DOMContentLoaded', function () {
@@ -383,60 +499,6 @@
         window.addEventListener('scroll', updateActive);
         updateActive();
       });
-    </script>
-        <!-- loader -->
-    <div id="pb_loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#FDA04F"/></svg></div>
-
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        var tabs = Array.from(document.querySelectorAll('.service-category-tabs .nav-link'));
-        var activeIndex = tabs.findIndex(function(tab){ return tab.classList.contains('active'); });
-        if (activeIndex < 0) activeIndex = 0;
-        function showTab(index) {
-          if (!tabs[index]) return;
-          var tab = new bootstrap.Tab(tabs[index]);
-          tab.show();
-        }
-        function setActiveIndex(index) {
-          activeIndex = (index + tabs.length) % tabs.length;
-        }
-        function nextTab() {
-          setActiveIndex(activeIndex + 1);
-          showTab(activeIndex);
-        }
-        function prevTab() {
-          setActiveIndex(activeIndex - 1);
-          showTab(activeIndex);
-        }
-        tabs.forEach(function(tab, index) {
-          tab.addEventListener('shown.bs.tab', function() { activeIndex = index; });
-        });
-        // Auto-rotation disabled — user requested no autoscroll/auto-rotate
-        var rotateInterval = null;
-        function resetInterval() {
-          // no-op while auto-rotation is disabled
-        }
-        document.querySelector('.service-tab-next').addEventListener('click', function() {
-          nextTab();
-          resetInterval();
-        });
-        document.querySelector('.service-tab-prev').addEventListener('click', function() {
-          prevTab();
-          resetInterval();
-        });
-      });
-
-        <!-- Cookie consent card -->
-    <div id="cookie-consent-card" class="d-none" role="dialog" aria-live="polite" aria-label="Setări cookie-uri">
-      <h5>Folosim cookie-uri</h5>
-      <p>Folosim cookie-uri esențiale pentru funcționarea site-ului și, opțional, cookie-uri suplimentare pentru a-ți îmbunătăți experiența. Poți alege ce accepți.</p>
-      <div class="cookie-btn-row">
-        <button type="button" id="cookie-accept-all" class="btn btn-cookie-accept">Accept toate</button>
-        <button type="button" id="cookie-essential-only" class="btn btn-cookie-essential">Doar esențiale</button>
-      </div>
-    </div>
 
       // --- Cookie consent logic ---
       document.addEventListener('DOMContentLoaded', function () {
