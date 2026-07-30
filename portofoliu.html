@@ -384,17 +384,7 @@
         updateActive();
       });
     </script>
-        <!-- Cookie consent card -->
-    <div id="cookie-consent-card" class="d-none" role="dialog" aria-live="polite" aria-label="Setări cookie-uri">
-      <h5>Folosim cookie-uri</h5>
-      <p>Folosim cookie-uri esențiale pentru funcționarea site-ului și, opțional, cookie-uri suplimentare pentru a-ți îmbunătăți experiența. Poți alege ce accepți.</p>
-      <div class="cookie-btn-row">
-        <button type="button" id="cookie-accept-all" class="btn btn-cookie-accept">Accept toate</button>
-        <button type="button" id="cookie-essential-only" class="btn btn-cookie-essential">Doar esențiale</button>
-      </div>
-    </div>
-
-    <!-- loader -->
+        <!-- loader -->
     <div id="pb_loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#FDA04F"/></svg></div>
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -437,6 +427,16 @@
           resetInterval();
         });
       });
+
+        <!-- Cookie consent card -->
+    <div id="cookie-consent-card" class="d-none" role="dialog" aria-live="polite" aria-label="Setări cookie-uri">
+      <h5>Folosim cookie-uri</h5>
+      <p>Folosim cookie-uri esențiale pentru funcționarea site-ului și, opțional, cookie-uri suplimentare pentru a-ți îmbunătăți experiența. Poți alege ce accepți.</p>
+      <div class="cookie-btn-row">
+        <button type="button" id="cookie-accept-all" class="btn btn-cookie-accept">Accept toate</button>
+        <button type="button" id="cookie-essential-only" class="btn btn-cookie-essential">Doar esențiale</button>
+      </div>
+    </div>
 
       // --- Cookie consent logic ---
       document.addEventListener('DOMContentLoaded', function () {
