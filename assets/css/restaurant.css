@@ -261,6 +261,7 @@ a:focus {
     height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 }
 
@@ -479,4 +480,13 @@ a:focus {
 .pb_section .pb_card_v1 .card-subtitle,
 .pb_section .pb_card_v2 .card-subtitle {
   color: #777;
+}
+
+/* Service cards (events.html): forțează text închis la culoare,
+   indiferent de contextul (cover/hero) în care e reutilizată clasa .card-title */
+.service-card-body .card-title {
+  color: var(--brand-dark);
+}
+.service-card-body .card-text {
+  color: #4a4a4a;
 }
