@@ -558,58 +558,112 @@
           </div>
         </div>
         <div class="contact-form-wrapper">
-          <form id="wedding-contact-form">
-            <div class="mb-3">
-              <label for="contact-name">Nume</label>
-              <input type="text" id="contact-name" name="from_name" class="form-control" required>
-            </div>
-            <div class="row">
-              <div class="col-sm-6 mb-3">
-                <label for="contact-email">Email</label>
-                <input type="email" id="contact-email" name="from_email" class="form-control" required>
-              </div>
-              <div class="col-sm-6 mb-3">
-                <label for="contact-phone">Telefon</label>
-                <input type="tel" id="contact-phone" name="phone" class="form-control" required>
-              </div>
-            </div>
-            <div class="mb-3">
-              <label>Ce servicii te interesează?</label>
-              <div class="multiselect" id="services-multiselect">
-                <button type="button" class="multiselect-control" id="services-ms-control" aria-haspopup="listbox" aria-expanded="false">
-                  <div class="multiselect-tags" id="services-ms-tags">
-                    <span class="multiselect-placeholder">Alege serviciile dorite</span>
-                  </div>
-                  <i class="fa fa-chevron-down multiselect-chevron" aria-hidden="true"></i>
-                </button>
-                <div class="multiselect-dropdown" id="services-ms-dropdown" role="listbox">
-                  <label class="multiselect-option">
-                    <input type="checkbox" class="ms-option-input" value="Coordonare eveniment">
-                    <span>Coordonare eveniment</span>
-                  </label>
-                  <label class="multiselect-option">
-                    <input type="checkbox" class="ms-option-input" value="Personal ospitalitate">
-                    <span>Personal ospitalitate</span>
-                  </label>
-                  <label class="multiselect-option">
-                    <input type="checkbox" class="ms-option-input" value="Decor/floral">
-                    <span>Decor/floral</span>
-                  </label>
-                  <label class="multiselect-option">
-                    <input type="checkbox" class="ms-option-input" value="Muzică/DJ">
-                    <span>Muzică/DJ</span>
-                  </label>
-                </div>
-              </div>
-              <input type="hidden" id="services-hidden" name="services_list">
-            </div>
-            <div class="mb-3">
-              <label for="contact-message">Mesaj</label>
-              <textarea id="contact-message" name="message" class="form-control" rows="4" placeholder="Data nunții, numărul aproximativ de invitați, locația și orice alt detaliu util." required></textarea>
-            </div>
-            <button type="submit" class="btn pb_outline-light rounded-0 btn-xl pb_font-13 pb_letter-spacing-2 p-3 w-100" id="contact-submit-btn">Trimite detaliile</button>
-            <div id="contact-form-status" class="d-none"></div>
-          </form>
+<form id="wedding-contact-form">
+  <div class="mb-3">
+    <label for="contact-name">Nume</label>
+    <input type="text" id="contact-name" name="from_name" class="form-control" required>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6 mb-3">
+      <label for="contact-email">Email</label>
+      <input type="email" id="contact-email" name="from_email" class="form-control" required>
+    </div>
+
+    <div class="col-sm-6 mb-3">
+      <label for="contact-phone">Telefon</label>
+      <input type="tel" id="contact-phone" name="phone" class="form-control" required>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label>Ce servicii te interesează?</label>
+
+    <div class="multiselect" id="services-multiselect">
+      <button
+        type="button"
+        class="multiselect-control"
+        id="services-ms-control"
+        aria-haspopup="listbox"
+        aria-expanded="false">
+
+        <div class="multiselect-tags" id="services-ms-tags">
+          <span class="multiselect-placeholder">
+            Alege serviciile dorite
+          </span>
+        </div>
+
+        <i class="fa fa-chevron-down multiselect-chevron" aria-hidden="true"></i>
+      </button>
+
+      <div
+        class="multiselect-dropdown"
+        id="services-ms-dropdown"
+        role="listbox">
+
+        <label class="multiselect-option">
+          <input
+            type="checkbox"
+            class="ms-option-input"
+            value="Coordonare eveniment">
+          <span>Coordonare eveniment</span>
+        </label>
+
+        <label class="multiselect-option">
+          <input
+            type="checkbox"
+            class="ms-option-input"
+            value="Personal ospitalitate">
+          <span>Personal ospitalitate</span>
+        </label>
+
+        <label class="multiselect-option">
+          <input
+            type="checkbox"
+            class="ms-option-input"
+            value="Decor/floral">
+          <span>Decor/floral</span>
+        </label>
+
+        <label class="multiselect-option">
+          <input
+            type="checkbox"
+            class="ms-option-input"
+            value="Muzică/DJ">
+          <span>Muzică/DJ</span>
+        </label>
+
+      </div>
+    </div>
+
+    <input type="hidden" id="services-hidden" name="services_list">
+
+    <!-- NOI -->
+    <input type="hidden" id="event-type" name="event_type" value="Nuntă">
+    <input type="hidden" id="page-name" name="page_name">
+  </div>
+
+  <div class="mb-3">
+    <label for="contact-message">Mesaj</label>
+
+    <textarea
+      id="contact-message"
+      name="message"
+      class="form-control"
+      rows="4"
+      placeholder="Data nunții, numărul aproximativ de invitați, locația și orice alt detaliu util."
+      required></textarea>
+  </div>
+
+  <button
+    type="submit"
+    class="btn pb_outline-light rounded-0 btn-xl pb_font-13 pb_letter-spacing-2 p-3 w-100"
+    id="contact-submit-btn">
+    Trimite detaliile
+  </button>
+
+  <div id="contact-form-status" class="d-none"></div>
+</form>
         </div>
       </div>
     </section>
@@ -778,47 +832,57 @@
         renderTags();
       })();
 
-      // --- Formular de contact (EmailJS) ---
-      (function () {
-        emailjs.init({ publicKey: 'OGqmfCb5vRChU5K9R' });
+// --- Formular de contact (EmailJS) ---
+(function () {
+  emailjs.init({ publicKey: 'tKfor3zXkxI6XAKKQ' });
 
-        var form = document.getElementById('wedding-contact-form');
-        var statusBox = document.getElementById('contact-form-status');
-        var submitBtn = document.getElementById('contact-submit-btn');
+  var form = document.getElementById('wedding-contact-form');
+  var statusBox = document.getElementById('contact-form-status');
+  var submitBtn = document.getElementById('contact-submit-btn');
 
-        function showStatus(message, type) {
-          statusBox.textContent = message;
-          statusBox.classList.remove('d-none', 'status-success', 'status-error');
-          statusBox.classList.add(type === 'success' ? 'status-success' : 'status-error');
-        }
+  function showStatus(message, type) {
+    statusBox.textContent = message;
+    statusBox.classList.remove('d-none', 'status-success', 'status-error');
+    statusBox.classList.add(type === 'success' ? 'status-success' : 'status-error');
+  }
 
-        form.addEventListener('submit', function (e) {
-          e.preventDefault();
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-          submitBtn.disabled = true;
-          submitBtn.textContent = 'Se trimite...';
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Se trimite...';
 
-          emailjs.sendForm('service_mne8pjh', 'template_b6bwngr', form)
-            .then(function () {
-              showStatus('Mulțumim! Am primit detaliile și te contactăm în curând.', 'success');
-              form.reset();
-              document.getElementById('services-ms-tags').innerHTML = '';
-              var placeholder = document.createElement('span');
-              placeholder.className = 'multiselect-placeholder';
-              placeholder.textContent = 'Alege serviciile dorite';
-              document.getElementById('services-ms-tags').appendChild(placeholder);
-              document.getElementById('services-hidden').value = '';
-            })
-            .catch(function (error) {
-              console.error('EmailJS error:', error);
-              showStatus('A apărut o eroare la trimitere. Te rugăm încearcă din nou sau sună-ne direct.', 'error');
-            })
-            .finally(function () {
-              submitBtn.disabled = false;
-              submitBtn.textContent = 'Trimite detaliile';
-            });
-        });
-      })();
+    // Informații suplimentare pentru EmailJS
+    document.getElementById('event-type').value = 'Nuntă';
+    document.getElementById('page-name').value = window.location.pathname;
+
+    emailjs.sendForm('service_k8zs6ie', 'template_xddpi7n', form)
+      .then(function () {
+        showStatus('Mulțumim! Am primit detaliile și te contactăm în curând.', 'success');
+
+        form.reset();
+
+        // Reinițializează câmpurile ascunse
+        document.getElementById('event-type').value = 'Nuntă';
+        document.getElementById('page-name').value = '';
+
+        document.getElementById('services-ms-tags').innerHTML = '';
+        var placeholder = document.createElement('span');
+        placeholder.className = 'multiselect-placeholder';
+        placeholder.textContent = 'Alege serviciile dorite';
+        document.getElementById('services-ms-tags').appendChild(placeholder);
+        document.getElementById('services-hidden').value = '';
+      })
+      .catch(function (error) {
+        console.error('EmailJS error:', error);
+        showStatus('A apărut o eroare la trimitere. Te rugăm încearcă din nou sau sună-ne direct.', 'error');
+      })
+      .finally(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Trimite detaliile';
+      });
+  });
+})();
     </script>
   </body>
 </html>
